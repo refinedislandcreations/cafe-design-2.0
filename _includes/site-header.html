@@ -1,18 +1,31 @@
-<!-- HEADER SECTION: Logo and Hamburger Navigation -->
-<section class="max-w-screen-2xl mx-auto flex justify-between items-center fixed z-50 top-0 left-0 right-0 px-5 py-2 header">
-    <div class="flex items-center justify-between w-full header-logo-position">
-        <!-- Logo Link -->
-        <a href="/index.html" aria-label="Go to homepage" class="z-30">
-            <img src="/images/rise-and-grind-logo-optimized.png" alt="Rise & Grind Logo" class="w-44 sm:w-48">
-        </a>
-        
-        <!-- Hamburger Menu -->
-        <div class="text-right relative">
-            <div class="hamburger-wrapper">
-                <div class="hamburger-menu cursor-pointer z-30">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+<!-- Unified Header and Background Section -->
+<section class="max-w-screen-2xl mx-auto relative h-screen">
+    <!-- Background Image -->
+    {% for item in page.header %}
+    <div class="bg-cover bg-no-repeat absolute inset-0 -z-10" style="background-image: url('{{ item.image }}'); background-position: {{ item.position }};">
+        <div class="flex flex-col justify-center h-full p-5 text-white">
+            <h1 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p">{{ item.title }}</h1>
+            <p class="text-lg sm:text-xl">{{ item.text }}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- Logo and Hamburger Navigation -->
+    <div class="flex justify-between items-center fixed z-50 top-0 left-0 right-0 px-5 py-2 header">
+        <div class="flex items-center justify-between w-full header-logo-position">
+            <!-- Logo Link -->
+            <a href="/index.html" aria-label="Go to homepage" class="z-30">
+                <img src="/images/rise-and-grind-logo-optimized.png" alt="Rise & Grind Logo" class="w-44 sm:w-48">
+            </a>
+
+            <!-- Hamburger Menu -->
+            <div class="text-right relative">
+                <div class="hamburger-wrapper">
+                    <div class="hamburger-menu cursor-pointer z-30">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
