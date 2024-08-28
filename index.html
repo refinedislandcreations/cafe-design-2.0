@@ -21,18 +21,16 @@ header:
 
 <!----------------HEADER---------------------->
 
-<section class="max-w-screen-2xl mx-auto">
-  {% for item in page.header %}
-  <div class="bg-cover bg-no-repeat object-cover h-screen relative" style="background-image: linear-gradient(to right, rgba(21, 19, 18, 0.99), rgba(66, 53, 47, 0.37)), url('{{ item.image }}'); background-position: {{ item.position }};">
-     <img class="-z-10 absolute inset-0 w-full h-full object-cover object-center" src="{{ item.image }}" alt="{{ item.label }}">
-        <div class="flex flex-col h-full justify-end px-2p">
-           <p class="header-title editable">{{ item.title }}</p>
-           <h2 class="big-title pb-5p sm:pr-5p md:pr-40p lg:pr-0 editable">{{ item.sub-title }}</h2>
-           <div class="mt-5p mb-5p">
-              <a href="{{ item.cta-url }}" class="button-header mr-5p" target="_blank" rel="noopener noreferrer" aria-label="{{ item.cta-label }}">{{ item.cta }}</a>
-           </div>
-        </div>
-     </div>
-  {% endfor %}
+<section class="max-w-screen-2xl mx-auto"> 
+   {% for item in page.header %}
+   <div class="bg-cover bg-no-repeat relative mx-5p h-screen -z-10"
+       style="background-image: url('{{ item.image }}'); background-position: {{ item.position }};"
+       alt="{{ item.label | default: item.title }}">
+       <div class="flex flex-col justify-start h-full p-5 text-white">
+           <h1 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p">{{ item.title }}</h1>
+           <p class="text-lg sm:text-xl">{{ item.text }}</p>
+       </div>
+   </div>
+   {% endfor %}
 </section>
 
