@@ -11,12 +11,42 @@ header:
  - image: /images/cafe-banner-image.png
    position: 50% 50%
    label:
-   title: Rise and Grind
-   sub-title: lorem ipsum
-   cta: lorem ipsum
+   title: Fuel Your Morning with Bold Brews & Bright Vibes
+   sub-title: Crafting Coffee, Creating Connections
+   cta: Order Now
    cta-url:
    cta-label:
+story:
+ - title: "Our Story: The Daily Rise"
+   paragraph-1: "At Rise & Grind, our journey began with a simple vision: to transform every morning into a delightful experience. Our passion for coffee and community led us to create a space where quality brews and a warm atmosphere come together seamlessly. From sourcing the finest beans to perfecting our brewing techniques, every detail reflects our commitment to excellence and our love for crafting the ideal cup."
+   paragraph-2: "But we’re more than just a café—we’re a community hub where people gather to share stories, enjoy a leisurely breakfast, and savor the little moments. Our space is designed to be inviting and vibrant, offering a retreat from the hustle and bustle of everyday life. Whether you're catching up with friends or enjoying a quiet moment to yourself, Rise & Grind is here to make your mornings brighter and your days more fulfilling."
+   cta: Get in touch
+   cta-url:
+   cta-label:
+   image: /images/coffee-cup.jpg
+   position: 50% 50%
+   alt:
 ---
+
+
+
+<section class="max-w-screen-2xl mx-auto">
+  {% for item in page.story %}
+  <div class="grid grid-cols-3 px-5p py-5p">
+      <div class="col-span-2">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.paragraph-1 }}</p>
+          <p>{{ item.paragraph-2 }}</p>
+          <a href="{{ item.cta-url }}" aria-label="{{ item.cta-label }}" class="button">{{ item.cta }}</a>
+      </div>
+      <div class="col-span-1" >
+        <div class="relative h-full min-h-30 sm:min-h-50">
+          <img loading="lazy" class="absolute inset-0 w-full h-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
+        </div>
+      </div>
+  </div>
+  {% endfor %}
+</section>
 
 
 
