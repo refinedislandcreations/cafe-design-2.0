@@ -8,10 +8,31 @@ seo:
   social_image: /images/
   hide-from-google: true
 header:
- - image: /images/
+ - image: /images/cafe-banner-image.png
    position: 50% 50%
-   label: 
-   title: 
-   text: 
+   label:
+   title: Rise and Grind
+   sub-title: lorem ipsum
+   cta: lorem ipsum
+   cta-url:
+   cta-label:
 ---
+
+
+<!----------------HEADER---------------------->
+
+<section class="max-w-screen-2xl mx-auto">
+  {% for item in page.header %}
+  <div class="bg-cover bg-no-repeat object-cover h-screen relative" style="background-image: linear-gradient(to right, rgba(21, 19, 18, 0.99), rgba(66, 53, 47, 0.37)), url('{{ item.image }}'); background-position: {{ item.position }};">
+     <img class="-z-10 absolute inset-0 w-full h-full object-cover object-center" src="{{ item.image }}" alt="{{ item.label }}">
+        <div class="flex flex-col h-full justify-end px-2p">
+           <p class="header-title editable">{{ item.title }}</p>
+           <h2 class="big-title pb-5p sm:pr-5p md:pr-40p lg:pr-0 editable">{{ item.sub-title }}</h2>
+           <div class="mt-5p mb-5p">
+              <a href="{{ item.cta-url }}" class="button-header mr-5p" target="_blank" rel="noopener noreferrer" aria-label="{{ item.cta-label }}">{{ item.cta }}</a>
+           </div>
+        </div>
+     </div>
+  {% endfor %}
+</section>
 
