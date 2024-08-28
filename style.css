@@ -1,0 +1,268 @@
+/* ----------- Import Tailwind -----*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ----------- Default Styles to apply to the whole project  --------- */
+
+@layer base { a { @apply no-underline; }  }
+
+/* ----------- ADDITIONAL COMPONENTS  --------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}  
+
+html { scroll-behavior: smooth; }
+
+
+/* For regular laptops and smaller screens */
+body {
+    max-width: 100vw; /* Allow it to expand to the full width of the screen */
+    background-color: #FFFDFF; 
+    color:  #033357; 
+    font-family: "Source Sans 3", sans-serif;
+    overflow-x: hidden;
+}
+
+/* Ensure max-width and centering for larger screens */
+@media screen and (min-width: 1600px) {
+  .max-width {
+    max-width: 1600px; /* Limit max-width to 1600px */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+}
+
+/* Fixed header styles */
+header {
+  width: 100% !important; /* Full width for the header */
+  position: fixed;
+  top: 0;
+  z-index: 50;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background:  #FFFDFF; 
+}
+
+.header-bg {
+  background-color: #FFFDFF; 
+}
+
+.header-font {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.title-font {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.button {
+  border-width: 2.5px;
+  border-color: #033357;
+  border-radius: 0.25rem;
+  background-color: #033357;
+  color: #FFFDFF; 
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.button:hover {
+  border-color: #033357;
+  background-color: inherit;
+  color:#033357;
+}
+
+
+/* Aspect Ratio  */
+.gallery-portrait-tall { padding-bottom: 175%; }
+.gallery-portrait { padding-bottom: 125%; }
+.gallery-square { padding-bottom: 100%; }
+.gallery-landscape { padding-bottom: 66%; }
+.gallery-landscape-wide { padding-bottom: 56%; }
+
+/* Background Position */
+.g-bg-pos-t { background-position: top; }
+.g-bg-pos-b { background-position: bottom; }
+.g-bg-pos-l { background-position: left; }
+.g-bg-pos-r { background-position: right; }
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 20px;
+}
+
+.hamburger-menu span {
+  background-color: #033357;
+  height: 4px;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu {
+  display: fixed;
+  background-color: #033357; /* Dark blue background */
+  color: #FFFDFF; /* Light text color */
+  padding-left: 2rem;
+  padding-top: 2rem;
+  position: fixed;
+  top: 0;
+  right: -500px; /* Initially hidden off-screen */
+  width: 300px; /* Width of the menu */
+  height: 841px;
+  text-align: left;
+  overflow-y: auto;
+  z-index: 50;
+  transition: right 0.7s ease; /* Slide effect */
+  border-left: 4px solid #D2AE39; /* Yellow left border */
+}
+
+.mobile-menu.active {
+  right: 38px; 
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mobile-menu a {
+  text-decoration: none; 
+  color: #FFFDFF; /* Light text color */
+  /* padding: 1rem; */
+  display: block;
+  font-weight: normal;
+  font-size: 1.3rem;
+}
+
+.submenu {
+  margin-top: 0.5rem;
+  /* padding-left: 1.5rem;  Indent submenus */
+  border-left: 2px solid #D2AE39; 
+  margin-left: 5%;
+}
+
+.footer-contact {
+  display: inline-block;
+  border-bottom: 2px solid #D2AE39;
+  width: auto;
+}
+
+.submenu a {
+  font-size: 1.1rem; /* Slightly smaller for subpages */
+}
+
+
+.close-button {
+  background: none;
+  border: none;
+  color: #FFFDFF; /* Light text color */
+  font-size: 2rem; /* Size of the close icon */
+  position: absolute; /* Position it in the top-right corner */
+  top: 2.5rem;
+  right: 1.7rem;
+  cursor: pointer;
+}
+
+
+footer {
+  background-color: #033357; /* Dark blue */
+  color: #FFFDFF; /* Light text color */
+}
+
+.footer-logo img {
+  width: 100%; /* Responsive logo */
+  max-width: 200px; /* Set a max width */
+}
+
+.footer-link {
+  display: block; /* Ensure each link is a block element */
+  color: #FFFDFF; /* Light text color */
+  text-decoration: none;
+  padding: 0.5rem 0; /* Adjusted padding for cleaner look */
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #D2AE39; /* Gold hover effect */
+}
+
+.submenu {
+  padding-left: 1.25rem; /* Adjusted indent for better visibility */
+  margin-top: 0.25rem; /* Space above submenu items */
+}
+
+.footer-link,
+.footer-contact {
+  font-size: 1.1rem; /* Ensure all links have the same font size */
+  color: #FFFDFF; /* Light text color */
+  text-decoration: none;
+  padding: 0.5rem 0; /* Adjusted padding for cleaner look */
+  transition: color 0.3s;
+}
+
+/*Scroll to top button */ 
+
+.back-to-top-button-parent {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.myBtn {
+  display: none; 
+  position: absolute; 
+  bottom: 20px; 
+  right: 0;
+  z-index: 99; 
+  border: none; 
+  outline: none; 
+  background-color:  #D2AE39; 
+  color: #033357; 
+  cursor: pointer; 
+  width: 30px; 
+  height: 30px; 
+  border-radius: 50%; 
+  font-size: 16px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+
+.myBtn:hover {
+  color:#D2AE39;
+  background-color: #033357; 
+}
+
+.hamburger-wrapper {
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  top: 48%;
+  right: 19%;
+  z-index: 1000;
+}
+
+

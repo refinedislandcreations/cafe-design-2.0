@@ -1,0 +1,252 @@
+paths:
+  uploads: uploads
+  static: ''
+  dam_uploads: dam_uploads
+  dam_static: ''
+  collections: ''
+  data: _data
+  layouts: _layouts
+  includes: _includes
+collections_config:
+  pages:
+    path: ''
+    output: true
+    filter: strict
+    icon: notes
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+_inputs:
+  categories:
+    type: multiselect
+    options:
+      allow_create: true
+      empty_type: array
+    cascade: true
+  tags:
+    type: multiselect
+    options:
+      allow_create: true
+      empty_type: array
+    cascade: true
+  image_6_background_position:
+    type: select
+    options:
+      allow_create:
+      allow_empty: false
+      values:
+        - center
+        - top
+        - bottom
+        - left
+        - left top
+        - left bottom
+        - right
+        - right top
+        - right bottom
+        -
+        -
+      value_key:
+    label: Image Position
+    cascade: true
+  image_5_background_position:
+    type: select
+    options:
+      allow_create:
+      allow_empty: false
+      values:
+        - center
+        - top
+        - bottom
+        - left
+        - left top
+        - left bottom
+        - right
+        - right top
+        - right bottom
+        -
+        -
+      value_key:
+    label: Image Position
+    cascade: true
+  image_4_background_position:
+    type: select
+    options:
+      allow_create:
+      allow_empty: false
+      values:
+        - center
+        - top
+        - bottom
+        - left
+        - left top
+        - left bottom
+        - right
+        - right top
+        - right bottom
+        -
+        -
+      value_key:
+    label: Image Position
+    cascade: true
+  image_3_background_position:
+    type: select
+    options:
+      allow_create:
+      allow_empty: false
+      values:
+        - center
+        - top
+        - bottom
+        - left
+        - left top
+        - left bottom
+        - right
+        - right top
+        - right bottom
+        -
+        -
+      value_key:
+    label: Image Position
+    cascade: true
+  image_2_background_position:
+    type: select
+    options:
+      allow_create:
+      allow_empty: false
+      values:
+        - center
+        - top
+        - bottom
+        - left
+        - left top
+        - left bottom
+        - right
+        - right top
+        - right bottom
+        -
+        -
+      value_key:
+    label: Image Position
+    cascade: true
+  image_1_background_position:
+    type: select
+    options:
+      allow_create:
+      allow_empty: false
+      values:
+        - center
+        - top
+        - bottom
+        - left
+        - left top
+        - left bottom
+        - right
+        - right top
+        - right bottom
+        -
+        -
+      value_key:
+    label: Image Position
+    cascade: true
+  background_position:
+    type: select
+    options:
+      allow_create:
+      allow_empty: false
+      values:
+        - center
+        - top
+        - bottom
+        - left
+        - left top
+        - left bottom
+        - right
+        - right top
+        - right bottom
+        -
+        -
+      value_key:
+    label: Image Position
+    cascade: true
+  property_1_background_position:
+    type: select
+    options:
+      allow_create:
+      allow_empty: false
+      values:
+        - center
+        - top
+        - bottom
+        - left
+        - left top
+        - left bottom
+        - right
+        - right top
+        - right bottom
+        -
+        -
+      value_key:
+    label: Image Position
+    cascade: true
+  layout:
+    type: text
+    hidden: true
+    cascade: true
+  roomssmall:
+    type: array
+    options:
+      empty_type:
+      preview:
+      structures:
+    label: Lodging options on small screens
+    comment: Please do not add additional options.
+    cascade: true
+  roomsbig:
+    type: array
+    label: Lodging options on large screens
+    comment: Please do not add additional options.
+    cascade: true
+  url:
+    type: url
+    options:
+      paths:
+      empty_type:
+    hidden: true
+    cascade: true
+  image:
+    type: image
+    cascade: true
+  image_1:
+    type: image
+    label: First image
+    cascade: true
+  image_2:
+    type: image
+    label: Second image
+    cascade: true
+  image_3:
+    type: image
+    label: Third image
+    cascade: true
+  image_4:
+    type: image
+    label: Fourth image
+    cascade: true
+  image_5:
+    type: image
+    label: Fifth image
+    cascade: true
+  image_6:
+    type: image
+    label: Sixth image
+    cascade: true
+  pdf:
+    type: document
+    label: Reconciliation PDF
+    options:
+      empty_type: text
+      paths: pdfs
+    cascade: true
+data_config: {}
+timezone: Etc/UTC
