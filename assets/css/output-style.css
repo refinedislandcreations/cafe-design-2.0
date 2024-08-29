@@ -481,6 +481,12 @@ a {
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
+.row-span-1 {
+  grid-row: span 1 / span 1;
+}
+.row-span-2 {
+  grid-row: span 2 / span 2;
+}
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -495,6 +501,9 @@ a {
 }
 .mt-4 {
   margin-top: 1rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .block {
   display: block;
@@ -520,8 +529,17 @@ a {
 .h-screen {
   height: 100vh;
 }
+.h-12 {
+  height: 3rem;
+}
 .min-h-30 {
   min-height: 30vh;
+}
+.min-h-80 {
+  min-height: 80vh;
+}
+.min-h-40 {
+  min-height: 40vh;
 }
 .w-44 {
   width: 11rem;
@@ -547,6 +565,15 @@ a {
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
 .flex-col {
   flex-direction: column;
 }
@@ -562,10 +589,24 @@ a {
 .justify-between {
   justify-content: space-between;
 }
+.gap-4 {
+  gap: 1rem;
+}
+.gap-8 {
+  gap: 2rem;
+}
 .space-y-5p > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(5% * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(5% * var(--tw-space-y-reverse));
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1rem * var(--tw-space-x-reverse));
+  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 .overflow-x-auto {
   overflow-x: auto;
@@ -618,6 +659,10 @@ a {
 .py-5p {
   padding-top: 5%;
   padding-bottom: 5%;
+}
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .pb-10p {
   padding-bottom: 10%;
@@ -919,6 +964,10 @@ footer {
   top: 48%;
   right: 19%;
   z-index: 1000;
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 @media (min-width: 640px) {

@@ -42,6 +42,57 @@ menu:
    menu-pdf:
    menu-label:
    menu: View full menu
+gallery:
+- title: "Our Space: A Glimpse Inside"
+  images:
+    large-image: /images/coffee-cup.jpg
+    large-image-label: "Cozy Interior with Warm Lighting"
+    small-images:
+      - image: /images/coffee-cup.jpg
+        label: "Barista at Work"
+      - image: /images/coffee-cup.jpg
+        label: "Comfortable Seating Area"
+      - image: /images/coffee-cup.jpg
+        label: "Outdoor Patio"
+      - image: /images/coffee-cup.jpg
+        label: "Outdoor Patio"
+  instagram: /www.instagram com
+  ig-label:
+  ig-cta: check out our ig for more impressions
+map:
+- title: "Find Us Here"
+  cta: "Visit Us at Our Location"
+  paragraph-1: "We are located at the heart of the city, easily accessible by public transport."
+  whatsapp-nr: "+62 123 4567"
+  phone-nr: "+62 123 4567"
+  email: "contact@example.com"
+  map-embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.4147067717995!2d115.16559057465471!3d-8.746993291303497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2441650216933%3A0xdf71da6ddd7bcc1f!2sI%20Gusti%20Ngurah%20Rai%20International%20Airport!5e0!3m2!1sen!2sid!4v1724913143799!5m2!1sen!2sid"
+footer:
+logo: /images/logo.png
+explore:
+  - title: "Home"
+    url: /
+  - title: "About Us"
+    url: /about
+  - title: "Services"
+    url: /services
+  - title: "Gallery"
+    url: /gallery
+  - title: "Contact"
+    url: /contact
+follow:
+  instagram:
+    url: https://www.instagram.com/yourprofile
+    icon: fa-brands fa-instagram
+  facebook:
+    url: https://www.facebook.com/yourprofile
+    icon: fa-brands fa-facebook
+  tripadvisor:
+    url: https://www.tripadvisor.com/yourprofile
+    icon: fa-brands fa-tripadvisor
+  whatsapp:
+    url: https://wa.me/yourwhatsappnumber
+    icon: fa-brands fa-whatsapp
 ---
 
 
@@ -102,22 +153,83 @@ menu:
     <div>
       <h3>{{ item.title }}</h3>
     </div>
-    <div class="grid">
-      <div class="flex items-start">
-        {% for menu_item in item.items %}
-        <div class="block flex-shrink-0 w-80 mx-4 relative group">
-          <img class="w-full h-80 object-cover" src="{{ menu_item.menu-item-image }}" alt="{{ menu_item.menu-item-label }}" />
-          <div class="absolute inset-x-0 bottom-0 bg-white bg-opacity-75 p-3 flex items-center justify-between">
-            <span class="text-lg font-semibold">{{ menu_item.menu-item }}</span>
-            <i class="fas fa-link text-blue-500"></i>
-          </div>
-        </div>
-        {% endfor %}
+    <div class="grid grid-cols-4 grid-rows-2 gap-4">
+      <!-- Large Image Section (2x2 grid) -->
+      <div class="col-span-2 row-span-2 overflow-hidden relative h-full min-h-80">
+        <img class="absolute inset-0 w-full h-full object-cover" src="{{ item.images.large-image }}" alt="{{ item.images.large-image-label }}" />
       </div>
+
+      <!-- Small Images Section (remaining 2 columns) -->
+      {% for image in item.images.small-images %}
+      <div class="col-span-1 row-span-1 overflow-hidden relative h-full min-h-40">
+        <img class="absolute inset-0 w-full h-full object-cover" src="{{ image.image }}" alt="{{ image.label }}" />
+      </div>
+      {% endfor %}
     </div>
-    <div class="col-span-2">
-      <a href="{{ item.menu-pdf }}" aria-label="{{ item.menu-label }}" class="button">{{ item.menu }}</a>
+    <div>
+      <a href="{{ item.instagram }}" aria-label="{{ item.ig-label }}" class="button">{{ item.ig-cta }}</a>
+  </div>
+  </div>
+  {% endfor %}
+</section>
+
+
+<section class="max-w-screen-2xl mx-auto">
+  {% for item in page.map %}
+  <div class="px-5p py-5p">
+    <div class="grid grid-cols-2">
+      <div>
+        <iframe src="{{ item.map-embed }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div>
+        <p>{{ item.cta }}</p>
+        <p>{{ item.paragraph-1 }}</p>
+        <p><i class="fa-brands fa-whatsapp"></i>{{ item.whatsapp-nr }}</p>
+        <p><i class="fa-solid fa-phone"></i>{{ item.phone-nr }}</p>
+        <p><i class="fa-regular fa-envelope"></i>{{ item.email }}</p>
+      </div>
     </div>
   </div>
   {% endfor %}
 </section>
+
+
+
+
+<footer class="bg-gray-800 text-white py-10">
+  <div class="max-w-screen-2xl mx-auto grid grid-cols-3 gap-8 px-5">
+    <!-- Logo Section -->
+    <div class="flex items-center">
+      <img src="{{ page.footer.logo }}" alt="Logo" class="h-12">
+    </div>
+    
+    <!-- Explore Column -->
+    <div>
+      <h4 class="text-lg font-semibold">Explore</h4>
+      <ul class="mt-4">
+        {% for link in page.footer.explore %}
+        <li><a href="{{ link.url }}" class="hover:underline">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    
+    <!-- Follow Us Column -->
+    <div>
+      <h4 class="text-lg font-semibold">Follow Us</h4>
+      <ul class="mt-4 flex space-x-4">
+        {% for platform in page.footer.follow %}
+        <li>
+          <a href="{{ platform.url }}" aria-label="{{ platform.icon }}" class="text-2xl hover:text-gray-400">
+            <i class="{{ platform.icon }}"></i>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Built and Designed By Me -->
+  <div class="text-center text-gray-400 mt-10">
+    <p>Built and designed by me</p>
+  </div>
+</footer>

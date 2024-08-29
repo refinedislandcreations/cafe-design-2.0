@@ -39,12 +39,13 @@ body {
 /* Fixed header styles */
 header {
   /* width: 100% !important;  Full width for the header */
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   right: 0;
   z-index: 50;
 }
+
 
 .mobile-menu {
     position: fixed;
@@ -63,19 +64,12 @@ header {
   color: white;
 }
 
-.title-font {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-}
 
 .button {
   border-width: 2.5px;
-  border-color: #033357;
+  border-color: #B3997C;
   border-radius: 0.25rem;
-  background-color: #033357;
+  background-color: #B3997C;
   color: #FFFDFF; 
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -84,9 +78,9 @@ header {
 }
 
 .button:hover {
-  border-color: #033357;
-  background-color: inherit;
-  color:#033357;
+  border-color: brown;
+  background-color: black;
+  color: black;
 }
 
 
