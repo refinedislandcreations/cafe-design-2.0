@@ -27,9 +27,21 @@ story:
    position: 50% 50%
    alt:
 menu:
- - title:
-   paragraph-1:
-   
+ - title: "Morning Specialties"
+   paragraph-1: "Discover our morning specialties crafted with the finest ingredients to start your day right."
+   items:
+    - menu-item: "Classic Latte"
+      menu-item-image: /images/coffee-cup.jpg
+      menu-item-label: "Classic Latte with a smooth blend of espresso and steamed milk."
+    - menu-item: "Avocado Toast"
+      menu-item-image: /images/coffee-cup.jpg
+      menu-item-label: "Fresh avocado on toasted sourdough, topped with a sprinkle of chili flakes."
+    - menu-item: "Berry Smoothie"
+      menu-item-image: /images/coffee-cup.jpg
+      menu-item-label: "A refreshing mix of berries, banana, and yogurt to kickstart your morning."
+   menu-pdf:
+   menu-label:
+   menu: View full menu
 ---
 
 
@@ -58,23 +70,54 @@ menu:
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.menu %}
   <div class="px-5p py-5p">
-      <div>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.paragraph-1 }}</p>
-      </div>
-        <div class="overflow-x-auto whitespace-nowrap py-4">
-            <div class="flex items-start">
-                    <div class="block flex-shrink-0 w-80 mx-4 relative group">
-                        <img class="w-full h-80 object-cover" src="{{ item.menu-item-image }}" alt="{{ item.menu-item-label }}" />
-                        <div class="absolute inset-x-0 bottom-0 bg-white bg-opacity-75 p-3 flex items-center justify-between">
-                            <span class="text-lg font-semibold">{{ item.menu-item }}</span>
-                            <i class="fas fa-link text-blue-500"></i>
-                        </div>
-                    </div>
-            </div>
+    <div>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.paragraph-1 }}</p>
+    </div>
+    <div class="overflow-x-auto whitespace-nowrap py-4">
+      <div class="flex items-start">
+        {% for menu_item in item.items %}
+        <div class="block flex-shrink-0 w-80 mx-4 relative group">
+          <img class="w-full h-80 object-cover" src="{{ menu_item.menu-item-image }}" alt="{{ menu_item.menu-item-label }}" />
+          <div class="absolute inset-x-0 bottom-0 bg-white bg-opacity-75 p-3 flex items-center justify-between">
+            <span class="text-lg font-semibold">{{ menu_item.menu-item }}</span>
+            <i class="fas fa-link text-blue-500"></i>
+          </div>
         </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-span-2">
+      <a href="{{ item.menu-pdf }}" aria-label="{{ item.menu-label }}" class="button">{{ item.menu }}</a>
+  </div>
   </div>
   {% endfor %}
 </section>
 
 
+
+<section class="max-w-screen-2xl mx-auto">
+  {% for item in page.gallery %}
+  <div class="px-5p py-5p">
+    <div>
+      <h3>{{ item.title }}</h3>
+    </div>
+    <div class="grid">
+      <div class="flex items-start">
+        {% for menu_item in item.items %}
+        <div class="block flex-shrink-0 w-80 mx-4 relative group">
+          <img class="w-full h-80 object-cover" src="{{ menu_item.menu-item-image }}" alt="{{ menu_item.menu-item-label }}" />
+          <div class="absolute inset-x-0 bottom-0 bg-white bg-opacity-75 p-3 flex items-center justify-between">
+            <span class="text-lg font-semibold">{{ menu_item.menu-item }}</span>
+            <i class="fas fa-link text-blue-500"></i>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-span-2">
+      <a href="{{ item.menu-pdf }}" aria-label="{{ item.menu-label }}" class="button">{{ item.menu }}</a>
+    </div>
+  </div>
+  {% endfor %}
+</section>
