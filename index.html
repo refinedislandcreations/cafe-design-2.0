@@ -23,9 +23,12 @@ story:
    cta: Get in touch
    cta-url:
    cta-label:
-   image: /images/coffee-cup.jpg
-   position: 50% 50%
-   alt:
+   image1: /images/coffee-cup.jpg
+   alt1:
+   image2: /images/coffee-cup.jpg
+   alt2:
+   image3: /images/coffee-cup.jpg
+   alt3:
 menu:
  - title: "Morning Specialties"
    paragraph-1: "Discover our morning specialties crafted with the finest ingredients to start your day right."
@@ -68,40 +71,44 @@ map:
   email: "contact@example.com"
   map-embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.4147067717995!2d115.16559057465471!3d-8.746993291303497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2441650216933%3A0xdf71da6ddd7bcc1f!2sI%20Gusti%20Ngurah%20Rai%20International%20Airport!5e0!3m2!1sen!2sid!4v1724913143799!5m2!1sen!2sid"
 footer:
-logo: /images/logo.png
-explore:
-  - title: "Home"
-    url: /
-  - title: "About Us"
-    url: /about
-  - title: "Services"
-    url: /services
-  - title: "Gallery"
-    url: /gallery
-  - title: "Contact"
-    url: /contact
-follow:
-  instagram:
-    url: https://www.instagram.com/yourprofile
-    icon: fa-brands fa-instagram
-  facebook:
-    url: https://www.facebook.com/yourprofile
-    icon: fa-brands fa-facebook
-  tripadvisor:
-    url: https://www.tripadvisor.com/yourprofile
-    icon: fa-brands fa-tripadvisor
-  whatsapp:
-    url: https://wa.me/yourwhatsappnumber
-    icon: fa-brands fa-whatsapp
+  image: /images/cafe-banner-image.png
+  position: 50% 50%
+  logo: /images/rise-and-grind-logo-optimized.png
+  logo-alt: "Rise & Grind Logo"
+  logo-url: /index.html
+  navigation-links:
+    - label: "Our Story"
+      url: "#"
+    - label: "What's Brewing"
+      url: "#"
+    - label: "Menu"
+      url: "#"
+    - label: "Visit Us"
+      url: "#"
+    - label: "Contact Us"
+      url: "#"
+  social-media:
+    - label: "Facebook"
+      url: "https://facebook.com"
+      icon: facebook-f
+    - label: "Twitter"
+      url: "https://twitter.com"
+      icon: twitter
+    - label: "Instagram"
+      url: "https://instagram.com"
+      icon: instagram
+    - label: "LinkedIn"
+      url: "https://linkedin.com"
+      icon: linkedin-in
 ---
 
 
 
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.story %}
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 p-5p">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 p-10p">
     <!-- Text Content -->
-    <div class="lg:col-span-2 flex flex-col justify-center space-y-4">
+    <div class="lg:col-span-2 flex flex-col justify-end items-start h-full space-y-4">
       <h3 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p">{{ item.title }}</h3>
       <p class="leading-relaxed">{{ item.paragraph-1 }}</p>
       <p class="leading-relaxed">{{ item.paragraph-2 }}</p>
@@ -109,15 +116,26 @@ follow:
         {{ item.cta }}
       </a>
     </div>
-    <!-- Image -->
-    <div class="relative h-60 lg:h-full">
-      <img loading="lazy" src="{{ item.image }}" alt="{{ item.alt }}" 
-           class="absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg" 
-           style="object-position: {{ item.position }};">
+    <!-- Circular Images in a Column -->
+    <div class="flex flex-col space-y-4 items-center">
+      <!-- Each image with circle shape -->
+      <div class="w-20 h-20 lg:w-44 lg:h-44 overflow-hidden rounded-full shadow-lg">
+        <img loading="lazy" src="{{ item.image1 }}" alt="{{ item.alt1 }}" 
+             class="w-full h-full object-cover">
+      </div>
+      <div class="w-20 h-20 lg:w-44 lg:h-44 overflow-hidden rounded-full shadow-lg">
+        <img loading="lazy" src="{{ item.image2 }}" alt="{{ item.alt2 }}" 
+             class="w-full h-full object-cover">
+      </div>
+      <div class="w-20 h-20 lg:w-44 lg:h-44 overflow-hidden rounded-full shadow-lg">
+        <img loading="lazy" src="{{ item.image3 }}" alt="{{ item.alt3 }}" 
+             class="w-full h-full object-cover">
+      </div>
     </div>
   </div>
   {% endfor %}
 </section>
+
 
 
 
@@ -125,19 +143,18 @@ follow:
 
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.menu %}
-  <div class="px-5p py-5p">
-    <div class="text-center">
+  <div class="background-choco p-10p">
+    <div>
       <h3 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-5p ">{{ item.title }}</h3>
       <p>{{ item.paragraph-1 }}</p>
     </div>
-    <div class="overflow-x-auto whitespace-nowrap py-4">
+    <div class="overflow-x-auto whitespace-nowrap py-4 custom-scrollbar">
       <div class="flex items-start">
         {% for menu_item in item.items %}
         <div class="block flex-shrink-0 w-80 mx-4 relative group">
           <img class="w-full h-80 object-cover" src="{{ menu_item.menu-item-image }}" alt="{{ menu_item.menu-item-label }}" />
           <div class="absolute inset-x-0 bottom-0 bg-white bg-opacity-75 p-3 flex items-center justify-between">
             <span class="text-lg font-semibold">{{ menu_item.menu-item }}</span>
-            <i class="fas fa-link text-blue-500"></i>
           </div>
         </div>
         {% endfor %}
@@ -145,18 +162,19 @@ follow:
     </div>
     <div class="col-span-2 text-center mt-5p">
       <a href="{{ item.menu-pdf }}" aria-label="{{ item.menu-label }}" class="button">{{ item.menu }}</a>
-  </div>
+    </div>
   </div>
   {% endfor %}
 </section>
 
 
 
+
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.gallery %}
-  <div class="px-5p py-5p">
+  <div class="p-10p">
     <div>
-      <h3>{{ item.title }}</h3>
+      <h3 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-5p ">{{ item.title }}</h3>
     </div>
     <div class="grid grid-cols-4 grid-rows-2 gap-4">
       <!-- Large Image Section (2x2 grid) -->
@@ -181,7 +199,7 @@ follow:
 
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.map %}
-  <div class="px-5p py-5p">
+  <div class="background-choco p-10p">
     <div class="grid grid-cols-2">
       <div>
         <iframe src="{{ item.map-embed }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -198,43 +216,3 @@ follow:
   {% endfor %}
 </section>
 
-
-
-
-<footer class="bg-gray-800 text-white py-10">
-  <div class="max-w-screen-2xl mx-auto grid grid-cols-3 gap-8 px-5">
-    <!-- Logo Section -->
-    <div class="flex items-center">
-      <img src="{{ page.footer.logo }}" alt="Logo" class="h-12">
-    </div>
-    
-    <!-- Explore Column -->
-    <div>
-      <h4 class="text-lg font-semibold">Explore</h4>
-      <ul class="mt-4">
-        {% for link in page.footer.explore %}
-        <li><a href="{{ link.url }}" class="hover:underline">{{ link.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-    
-    <!-- Follow Us Column -->
-    <div>
-      <h4 class="text-lg font-semibold">Follow Us</h4>
-      <ul class="mt-4 flex space-x-4">
-        {% for platform in page.footer.follow %}
-        <li>
-          <a href="{{ platform.url }}" aria-label="{{ platform.icon }}" class="text-2xl hover:text-gray-400">
-            <i class="{{ platform.icon }}"></i>
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-
-  <!-- Built and Designed By Me -->
-  <div class="text-center text-gray-400 mt-10">
-    <p>Built and designed by me</p>
-  </div>
-</footer>
