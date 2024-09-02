@@ -99,21 +99,26 @@ follow:
 
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.story %}
-  <div class="grid grid-cols-3 px-5p py-5p">
-      <div class="col-span-2">
-          <h3 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-5p ">{{ item.title }}</h3>
-          <p class="pb-2p">{{ item.paragraph-1 }}</p>
-          <p class="pb-5p">{{ item.paragraph-2 }}</p>
-          <a href="{{ item.cta-url }}" aria-label="{{ item.cta-label }}" class="button">{{ item.cta }}</a>
-      </div>
-      <div class="col-span-1" >
-        <div class="relative h-full min-h-30 sm:min-h-50">
-          <img loading="lazy" class="absolute inset-0 w-full h-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
-        </div>
-      </div>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 p-5p">
+    <!-- Text Content -->
+    <div class="lg:col-span-2 flex flex-col justify-center space-y-4">
+      <h3 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p">{{ item.title }}</h3>
+      <p class="leading-relaxed">{{ item.paragraph-1 }}</p>
+      <p class="leading-relaxed">{{ item.paragraph-2 }}</p>
+      <a href="{{ item.cta-url }}" aria-label="{{ item.cta-label }}" class="button inline-block mt-5p">
+        {{ item.cta }}
+      </a>
+    </div>
+    <!-- Image -->
+    <div class="relative h-60 lg:h-full">
+      <img loading="lazy" src="{{ item.image }}" alt="{{ item.alt }}" 
+           class="absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg" 
+           style="object-position: {{ item.position }};">
+    </div>
   </div>
   {% endfor %}
 </section>
+
 
 
 
