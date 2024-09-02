@@ -4,23 +4,23 @@
         <!-- Background Image -->
         {% for item in page.header %}
         <div class="bg-cover bg-no-repeat object-cover absolute inset-0 -z-10" style="background-image: linear-gradient(to right, rgba(21, 19, 18, 0.99), rgba(66, 53, 47, 0.37)), url('{{ item.image }}'); background-position: {{ item.position }};">
-            <div class="flex flex-col justify-center h-full p-5 text-white">
-                <h1 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p">{{ item.title }}</h1>
-                <p class="text-lg sm:text-xl">{{ item.sub-title }}</p>
+            <div class="flex flex-col justify-center h-full p-5 text-white px-5p">
+                <h1 class="header-font text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p mr-20p">{{ item.title }}</h1>
+                <p class="text-lg sm:text-xl text-white">{{ item.sub-title }}</p>
                 <a href="{{ item.cta-url }}" aria-label="{{ item.cta-label }}" class="button">{{ item.cta }}</a>
             </div>
         </div>
         {% endfor %}
 
         <!-- Logo and Hamburger Navigation -->
-        <div class="flex justify-between items-center z-50 top-0 left-0 right-0 px-5 py-2 header">
+        <div class="flex justify-between items-center z-50 top-0 left-0 right-0 header">
             <div class="flex items-center justify-between w-full header-logo-position">
                 <!-- Logo Link -->
                 <a href="/index.html" aria-label="Go to homepage" class="z-30">
                     <img src="/images/rise-and-grind-logo-optimized.png" alt="Rise & Grind Logo" class="w-44 sm:w-48">
                 </a>
 
-                <div>
+                <div class="hidden md:block">
                     <a href="#"> Our Story </a>
                     <a href="#"> What's Brewing </a>
                     <a href="#"> Menu </a>
@@ -28,8 +28,8 @@
                     <a href="#"> Order Now </a>
                 </div>
 
-                <!-- Hamburger Menu -
-                <div class="text-right relative">
+                <!-- Hamburger Menu -->
+                <div class="text-right relative md:hidden">
                     <div class="hamburger-wrapper">
                         <div class="hamburger-menu cursor-pointer z-30">
                             <span></span>
@@ -37,13 +37,13 @@
                             <span></span>
                         </div>
                     </div>
-                </div> ------>
+                </div> 
             </div>
         </div>
     </div>
 </section>
 
-<!-- MOBILE MENU 
+<!-- MOBILE MENU -->
 <div class="mobile-menu fixed inset-0 z-40 hidden bg-black bg-opacity-50">
     <div class="mobile-menu-content bg-white p-5">
         <a href="/index.html" aria-label="Go to homepage">
@@ -55,4 +55,3 @@
         </nav>
     </div>
 </div>
--->

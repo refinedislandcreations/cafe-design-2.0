@@ -499,11 +499,17 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
-.mt-4 {
-  margin-top: 1rem;
+.mr-20p {
+  margin-right: 20%;
 }
 .mt-10 {
   margin-top: 2.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mt-5p {
+  margin-top: 5%;
 }
 .block {
   display: block;
@@ -517,6 +523,9 @@ a {
 .hidden {
   display: none;
 }
+.h-12 {
+  height: 3rem;
+}
 .h-80 {
   height: 20rem;
 }
@@ -529,17 +538,14 @@ a {
 .h-screen {
   height: 100vh;
 }
-.h-12 {
-  height: 3rem;
-}
 .min-h-30 {
   min-height: 30vh;
 }
-.min-h-80 {
-  min-height: 80vh;
-}
 .min-h-40 {
   min-height: 40vh;
+}
+.min-h-80 {
+  min-height: 80vh;
 }
 .w-44 {
   width: 11rem;
@@ -562,14 +568,14 @@ a {
 .cursor-pointer {
   cursor: pointer;
 }
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .grid-rows-2 {
   grid-template-rows: repeat(2, minmax(0, 1fr));
@@ -595,15 +601,15 @@ a {
 .gap-8 {
   gap: 2rem;
 }
-.space-y-5p > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(5% * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(5% * var(--tw-space-y-reverse));
-}
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * var(--tw-space-x-reverse));
   margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-y-5p > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(5% * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(5% * var(--tw-space-y-reverse));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -648,9 +654,9 @@ a {
   padding-left: 5%;
   padding-right: 5%;
 }
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -659,10 +665,6 @@ a {
 .py-5p {
   padding-top: 5%;
   padding-bottom: 5%;
-}
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 .pb-10p {
   padding-bottom: 10%;
@@ -740,12 +742,13 @@ body {
 /* Fixed header styles */
 header {
   /* width: 100% !important;  Full width for the header */
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   right: 0;
   z-index: 50;
 }
+
 
 .mobile-menu {
     position: fixed;
@@ -761,33 +764,30 @@ header {
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 0.025em;
+}
+
+.text-white {
   color: white;
 }
 
-.title-font {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-}
-
 .button {
+  display: inline-block;
+  width: auto;
   border-width: 2.5px;
-  border-color: #033357;
+  border-color: #B3997C;
   border-radius: 0.25rem;
-  background-color: #033357;
+  background-color: #B3997C;
   color: #FFFDFF; 
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .button:hover {
-  border-color: #033357;
-  background-color: inherit;
-  color:#033357;
+  border-color: brown;
+  background-color: black;
+  color: black;
 }
 
 
@@ -998,6 +998,12 @@ footer {
 }
 
 @media (min-width: 768px) {
+  .md\:block {
+    display: block;
+  }
+  .md\:hidden {
+    display: none;
+  }
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;

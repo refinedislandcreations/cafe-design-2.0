@@ -61,20 +61,24 @@ header {
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 0.025em;
+}
+
+.text-white {
   color: white;
 }
 
-
 .button {
+  display: inline-block;
+  width: auto;
   border-width: 2.5px;
   border-color: #B3997C;
   border-radius: 0.25rem;
   background-color: #B3997C;
   color: #FFFDFF; 
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .button:hover {
