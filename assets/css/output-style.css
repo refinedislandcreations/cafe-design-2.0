@@ -502,9 +502,6 @@ a {
 .mb-5p {
   margin-bottom: 5%;
 }
-.mr-15p {
-  margin-right: 15%;
-}
 .mt-5p {
   margin-top: 5%;
 }
@@ -541,8 +538,8 @@ a {
 .min-h-80 {
   min-height: 80vh;
 }
-.w-44 {
-  width: 11rem;
+.w-24 {
+  width: 6rem;
 }
 .w-80 {
   width: 20rem;
@@ -630,8 +627,15 @@ a {
 .whitespace-nowrap {
   white-space: nowrap;
 }
+.rounded {
+  border-radius: 0.25rem;
+}
 .rounded-full {
   border-radius: 9999px;
+}
+.bg-\[\#f0ece8\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 236 232 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -659,13 +663,25 @@ a {
   padding-left: 10%;
   padding-right: 10%;
 }
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .px-5p {
   padding-left: 5%;
   padding-right: 5%;
 }
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 .py-10p {
   padding-top: 10%;
   padding-bottom: 10%;
+}
+.py-15p {
+  padding-top: 15%;
+  padding-bottom: 15%;
 }
 .py-4 {
   padding-top: 1rem;
@@ -686,6 +702,9 @@ a {
 }
 .pl-5p {
   padding-left: 5%;
+}
+.pr-5p {
+  padding-right: 5%;
 }
 .pt-10p {
   padding-top: 10%;
@@ -764,13 +783,28 @@ body {
 }
 
 /* Fixed header styles */
-header {
-  /* width: 100% !important;  Full width for the header */
-  /* position: fixed; */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
+.header {
+  display: flex;
+  justify-content: space-between; /* Space between logo and nav */
+  align-items: center;
+}
+
+.header-logo-position {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header .nav-link {
+  color: #FFFDFF; /* Ensure link color matches your design */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0 1rem; /* Space between links */
+}
+
+.header .nav-link:hover {
+  text-decoration: underline; /* Add hover effect */
 }
 
 
@@ -799,6 +833,30 @@ header {
   background-color: #b39978;
 }
 
+.coffee-circle-default  {
+  position: relative;
+  background-color: #694f36;
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  margin-top: -33%;
+  margin-left: -1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coffee-circle-default::before {
+  content: '';
+  position: absolute;
+  background-color: #694f36;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 50%;
+  z-index: -1; /* Pushes the background behind the image */
+  margin-top: -8%;
+  margin-left: 10%;
+}
 
 .coffee-circle {
   position: relative;
@@ -878,63 +936,46 @@ header {
   justify-content: space-between;
   width: 22px;
   height: 20px;
-  z-index: 60;
+  cursor: pointer;
 }
 
 .hamburger-menu span {
-  background-color: #033357;
+  background-color: #eee6d9;
   height: 4px;
   width: 100%;
   transition: transform 0.3s ease-in-out;
 }
 
+/* Mobile Menu */
 .mobile-menu {
-  display: fixed;
-  background-color: #033357; /* Dark blue background */
-  color: #FFFDFF; /* Light text color */
-  padding-left: 2rem;
-  padding-top: 2rem;
   position: fixed;
   top: 0;
-  right: -500px; /* Initially hidden off-screen */
-  width: 300px; /* Width of the menu */
-  height: 841px;
-  text-align: left;
-  overflow-y: auto;
+  right: -100%;
+  width: 300px;
+  height: 100%;
+  background-color: #033357; /* Dark blue background */
+  color: #FFFDFF; /* Light text color */
+  padding: 2rem;
+  transition: right 0.3s ease-in-out;
   z-index: 50;
-  transition: right 0.7s ease; /* Slide effect */
   border-left: 4px solid #D2AE39; /* Yellow left border */
 }
 
+/* Active class to slide the menu in */
 .mobile-menu.active {
-  right: 38px; 
-}
-
-.mobile-menu-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.mobile-menu a {
-  text-decoration: none; 
-  color: #FFFDFF; /* Light text color */
-  /* padding: 1rem; */
-  display: block;
-  font-weight: normal;
-  font-size: 1.3rem;
+  right: 0;
 }
 
 
-
+/* Close button */
 .close-button {
   background: none;
   border: none;
   color: #FFFDFF; /* Light text color */
   font-size: 2rem; /* Size of the close icon */
-  position: absolute; /* Position it in the top-right corner */
-  top: 2.5rem;
-  right: 1.7rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   cursor: pointer;
 }
 
@@ -956,8 +997,8 @@ header {
   z-index: 99; 
   border: none; 
   outline: none; 
-  background-color:  #D2AE39; 
-  color: #033357; 
+  background-color:  #694f36; 
+  color: #eee6d9; 
   cursor: pointer; 
   width: 30px; 
   height: 30px; 
@@ -970,8 +1011,8 @@ header {
 
 
 .myBtn:hover {
-  color:#D2AE39;
-  background-color: #033357; 
+  color:#eee6d9;
+  background-color: #4c351e; 
 }
 
 .hamburger-wrapper {
@@ -1003,11 +1044,33 @@ header {
 }
 
 @media (min-width: 640px) {
-  .sm\:w-24 {
-    width: 6rem;
+  .sm\:relative {
+    position: relative;
+  }
+  .sm\:flex {
+    display: flex;
+  }
+  .sm\:grid {
+    display: grid;
+  }
+  .sm\:hidden {
+    display: none;
+  }
+  .sm\:w-44 {
+    width: 11rem;
+  }
+  .sm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sm\:py-10p {
+    padding-top: 10%;
+    padding-bottom: 10%;
   }
   .sm\:pb-5p {
     padding-bottom: 5%;
+  }
+  .sm\:pr-0 {
+    padding-right: 0px;
   }
   .sm\:pt-5p {
     padding-top: 5%;
@@ -1015,10 +1078,6 @@ header {
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 1;
-  }
-  .sm\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.2;
   }
 }
 

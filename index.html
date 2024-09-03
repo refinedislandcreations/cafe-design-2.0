@@ -11,8 +11,8 @@ header:
  - image: /images/cafe-banner-image.png
    position: 50% 50%
    label:
-   title: Fuel Your Morning with <span class="header-font"> Bold Brews & Bright Vibes </span> 
-   sub-title: Crafting Coffee, Creating Connections
+   sub-title: Fuel Your Morning with
+   title: Bold Brews & Bright Vibes 
    cta: Order Now
    cta-url:
    cta-label:
@@ -31,7 +31,7 @@ story:
    cta: Get in touch
    cta-url:
    cta-label:
-   image: /images/coffee-cup.jpg
+   image: /images/our-story.png
    alt:
 menu:
  - title: "Morning Specialties"
@@ -40,18 +40,23 @@ menu:
     - menu-item: "Classic "
       menu-item-image: /images/menu-food-2.png
       menu-item-label: 
+      position: "50% 50%"
     - menu-item: "Avocado Toast"
       menu-item-image: /images/menu-drink-2.png
       menu-item-label: 
+      position: "50% 50%"
     - menu-item: "Berry Smoothie"
       menu-item-image: /images/menu-food-1.png
       menu-item-label: 
+      position: "50% 50%"
     - menu-item: "Avocado Toast"
       menu-item-image: /images/menu-drink-3.png
       menu-item-label: 
+      position: "50% 50%"
     - menu-item: "Berry Smoothie"
       menu-item-image: /images/menu-food-3.png
       menu-item-label: 
+      position: "50% 50%"
    menu-pdf:
    menu-label:
    menu: View full menu
@@ -83,17 +88,21 @@ map:
 ---
 
 
-
 <!--------But first coffee-------------->
 
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.coffee %}
-  <div class="grid grid-cols-2 gap-10 py-10p pl-5p">
+  <div class="sm:grid sm:grid-cols-2 gap-10 py-15p sm:py-10p pl-5p pr-5p sm:pr-0">
     <!-- Text Content -->
     <div class="flex flex-col justify-start items-start space-y-4">
       <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
       <p class="leading-relaxed">{{ item.paragraph }}</p>
-      
+
+      <!-- Circular Image for Small Screens -->
+      <div class="sm:hidden relative flex items-center coffee-circle-default justify-center">
+        <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
+      </div>
+
       <!-- Icons with Blurbs -->
       <div class="grid grid-cols-2 gap-4">
         <div class="flex flex-col items-center space-y-2">
@@ -106,15 +115,16 @@ map:
         </div>
       </div>
     </div>
-    
-    <!-- Circular Image -->
-    <div class="relative flex items-center coffee-circle justify-center">
+
+    <!-- Circular Image for Medium Screens and Above -->
+    <div class="hidden sm:flex sm:relative items-center coffee-circle justify-center">
       <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
     </div>
 
   </div>
   {% endfor %}
 </section>
+
 
 
 
@@ -158,10 +168,10 @@ map:
     <div class="overflow-x-auto whitespace-nowrap py-4 custom-scrollbar">
       <div class="flex items-start">
         {% for menu_item in item.items %}
-        <div class="block flex-shrink-0 w-80 mx-4 relative group">
-          <img class="w-full h-80 object-cover" src="{{ menu_item.menu-item-image }}" alt="{{ menu_item.menu-item-label }}" />
+        <div class="block flex-shrink-0 w-80 mx-4 relative group bg-[#f0ece8]"> <!-- Background color for the menu item block -->
+          <img class="w-full h-80 object-cover" src="{{ menu_item.menu-item-image }}" alt="{{ menu_item.menu-item-label }}" style="object-position: {{ menu_item.position | default: '50% 50%' }};" /> <!-- Use the position from front matter -->
           <div class="absolute inset-x-0 bottom-0 bg-white bg-opacity-75 p-3 flex items-center justify-between">
-            <span class="text-lg font-semibold">{{ menu_item.menu-item }}</span>
+            <span class="text-lg font-semibold bg-[#f0ece8] px-2 py-1 rounded">{{ menu_item.menu-item }}</span> <!-- Background color added to the title -->
           </div>
         </div>
         {% endfor %}
@@ -173,6 +183,8 @@ map:
   </div>
   {% endfor %}
 </section>
+
+
 
 
 
@@ -217,11 +229,32 @@ map:
       <!-- Contact Details -->
       <div class="space-y-4">
         <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
-        <p class="flex items-center space-x-2"><i class="fa-solid fa-map-pin text-xl"></i><span>{{ item.address }}</span></p>
-        <p class="flex items-center space-x-2"><i class="fa-brands fa-whatsapp text-xl"></i><span>{{ item.whatsapp-nr }}</span></p>
-        <p class="flex items-center space-x-2"><i class="fa-regular fa-envelope text-xl"></i><span>{{ item.email }}</span></p>
-        <p class="flex items-center space-x-2"><i class="fa-brands fa-instagram"></i><span>{{ item.instagram }}</span></p>
-      </div>
+    
+        <!-- Address (You may want to link this to a map service like Google Maps) -->
+        <a href="https://www.google.com/maps/search/{{ item.address | urlencode }}" class="flex items-center space-x-2" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-map-pin text-xl"></i>
+            <span>{{ item.address }}</span>
+        </a>
+    
+        <!-- WhatsApp (Link formatted for mobile devices) -->
+        <a href="https://wa.me/{{ item.whatsapp-nr | replace: ' ', '' }}" class="flex items-center space-x-2" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            <span>{{ item.whatsapp-nr }}</span>
+        </a>
+    
+        <!-- Email -->
+        <a href="mailto:{{ item.email }}" class="flex items-center space-x-2">
+            <i class="fa-regular fa-envelope text-xl"></i>
+            <span>{{ item.email }}</span>
+        </a>
+    
+        <!-- Instagram (Link to Instagram profile) -->
+        <a href="https://instagram.com/{{ item.instagram | replace: '@', '' }}" class="flex items-center space-x-2" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram text-xl"></i>
+            <span>{{ item.instagram }}</span>
+        </a>
+    </div>
+    
     </div>
   </div>
   {% endfor %}

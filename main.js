@@ -1,14 +1,16 @@
 $(document).ready(function() {
-    $('.hamburger-wrapper').click(function() {
-        $('.mobile-menu').toggleClass('active');
-        $('.hamburger-menu').toggleClass('active');
-    });
+  $('.hamburger-wrapper').click(function() {
+      $('.mobile-menu').toggleClass('active'); // Toggles the class to slide the menu in and out
+      $('.hamburger-menu').toggleClass('active'); // Toggles the active class for hamburger animation
+  });
 
-    $('.close-button').click(function() {
-        $('.mobile-menu').removeClass('active');
-        $('.hamburger-menu').removeClass('active');
-    });
+  // Optional: Close the menu when the close button is clicked
+  $('.close-button').click(function() {
+      $('.mobile-menu').removeClass('active');
+      $('.hamburger-menu').removeClass('active');
+  });
 });
+
 
 
 
