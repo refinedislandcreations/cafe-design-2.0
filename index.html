@@ -56,9 +56,9 @@ menu:
    menu-label:
    menu: View full menu
 gallery:
-- title: "Our Space: A Glimpse Inside"
-  paragraph: "At Rise & Grind, we believe that a vibrant, well-designed space is essential for fostering the kind of community we cherish. Our café isn’t just a place to grab a coffee; it’s a hub where creativity and connection thrive. With its inviting ambiance and cozy nooks, our space is perfect for co-working, brainstorming, and meeting with friends."
-  images:
+ - title: "Our Space: A Glimpse Inside"
+   paragraph: "At Rise & Grind, we believe that a vibrant, well-designed space is essential for fostering the kind of community we cherish. Our café isn’t just a place to grab a coffee; it’s a hub where creativity and connection thrive. With its inviting ambiance and cozy nooks, our space is perfect for co-working, brainstorming, and meeting with friends."
+   images:
     large-image: /images/cafe-2-opt.png
     large-image-label: 
     small-images:
@@ -70,47 +70,16 @@ gallery:
         label: 
       - image: /images/cafe-5-opt.png
         label: 
-  instagram: /www.instagram com
-  ig-label:
-  ig-cta: check out our ig for more impressions
+   instagram: /www.instagram com
+   ig-label:
+   ig-cta: check out our ig for more impressions
 map:
-- title: "Find Us Here"
-  cta: "Visit Us at Our Location"
-  paragraph-1: "We are located at the heart of the city, easily accessible by public transport."
-  whatsapp-nr: "+62 123 4567"
-  phone-nr: "+62 123 4567"
-  email: "contact@example.com"
-  map-embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.4147067717995!2d115.16559057465471!3d-8.746993291303497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2441650216933%3A0xdf71da6ddd7bcc1f!2sI%20Gusti%20Ngurah%20Rai%20International%20Airport!5e0!3m2!1sen!2sid!4v1724913143799!5m2!1sen!2sid"
-footer:
-  image: /images/cafe-banner-image.png
-  position: 50% 50%
-  logo: /images/rise-and-grind-logo-optimized.png
-  logo-alt: "Rise & Grind Logo"
-  logo-url: /index.html
-  navigation-links:
-    - label: "Our Story"
-      url: "#"
-    - label: "What's Brewing"
-      url: "#"
-    - label: "Menu"
-      url: "#"
-    - label: "Visit Us"
-      url: "#"
-    - label: "Contact Us"
-      url: "#"
-  social-media:
-    - label: "Facebook"
-      url: "https://facebook.com"
-      icon: facebook-f
-    - label: "Twitter"
-      url: "https://twitter.com"
-      icon: twitter
-    - label: "Instagram"
-      url: "https://instagram.com"
-      icon: instagram
-    - label: "LinkedIn"
-      url: "https://linkedin.com"
-      icon: linkedin-in
+ - title: "Visit & Follow Us"
+   address: "Jalan Bali, 12345 Bali"
+   whatsapp-nr: "+62 123 4567"
+   email: "contact@example.com"
+   instagram: "@coffeelovers"
+   map-embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.4147067717995!2d115.16559057465471!3d-8.746993291303497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2441650216933%3A0xdf71da6ddd7bcc1f!2sI%20Gusti%20Ngurah%20Rai%20International%20Airport!5e0!3m2!1sen!2sid!4v1724913143799!5m2!1sen!2sid"
 ---
 
 
@@ -153,7 +122,7 @@ footer:
 
 <section class="max-w-screen-2xl mx-auto" >
   {% for item in page.gallery %}
-  <div class="py-10p px-5p -mt-15p background-choco" >
+  <div class="py-10p px-5p background-choco" >
     <div>
       <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
       <p class="leading-relaxed pb-5p">{{ item.paragraph }}</p>
@@ -238,20 +207,30 @@ footer:
 
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.map %}
-  <div class="background-choco p-10p">
-    <div class="grid grid-cols-2">
-      <div>
-        <iframe src="{{ item.map-embed }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="pt-10p pb-5p px-5p">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <!-- Map Embed -->
+      <div class="relative">
+        <iframe src="{{ item.map-embed }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-      <div>
-        <p>{{ item.cta }}</p>
-        <p>{{ item.paragraph-1 }}</p>
-        <p><i class="fa-brands fa-whatsapp"></i>{{ item.whatsapp-nr }}</p>
-        <p><i class="fa-solid fa-phone"></i>{{ item.phone-nr }}</p>
-        <p><i class="fa-regular fa-envelope"></i>{{ item.email }}</p>
+      
+      <!-- Contact Details -->
+      <div class="space-y-4">
+        <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
+        <p class="flex items-center space-x-2"><i class="fa-solid fa-map-pin text-xl"></i><span>{{ item.address }}</span></p>
+        <p class="flex items-center space-x-2"><i class="fa-brands fa-whatsapp text-xl"></i><span>{{ item.whatsapp-nr }}</span></p>
+        <p class="flex items-center space-x-2"><i class="fa-regular fa-envelope text-xl"></i><span>{{ item.email }}</span></p>
+        <p class="flex items-center space-x-2"><i class="fa-brands fa-instagram"></i><span>{{ item.instagram }}</span></p>
       </div>
     </div>
   </div>
   {% endfor %}
-</section>
 
+  <!-- Footer Credit -->
+  <div class="text-center text-gray-500 py-5">
+    <p>&copy; All rights reserved.</p>
+    <a href="https://refinedislandcreations.com/" class="pt-2" target="_blank" rel="noopener noreferrer" aria-label="Link to Refined Island Creations website design and development">
+        Designed and built by <span class="underline">Refined Island Creations</span>.
+    </a>
+  </div>
+</section>
