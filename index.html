@@ -92,20 +92,28 @@ map:
 
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.coffee %}
-  <div class="sm:grid sm:grid-cols-2 gap-10 py-15p sm:py-10p pl-5p pr-5p sm:pr-0">
+  
+
+
+    <!-- Circular Image for Small Screens -->
+    <div class="sm:hidden">
+      <div class="relative flex items-center coffee-circle-default justify-center">
+        <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
+      </div>
+    </div>
+
+    <div class="sm:grid sm:grid-cols-2 gap-10 py-15p sm:py-10p pl-5p pr-5p sm:pr-0">
+
     <!-- Text Content -->
     <div class="flex flex-col justify-start items-start space-y-4">
       <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
       <p class="leading-relaxed">{{ item.paragraph }}</p>
 
-      <!-- Circular Image for Small Screens -->
-      <div class="sm:hidden relative flex items-center coffee-circle-default justify-center">
-        <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
-      </div>
+      
 
       <!-- Icons with Blurbs -->
-      <div class="grid grid-cols-2 gap-4">
-        <div class="flex flex-col items-center space-y-2">
+      <div class="sm:grid sm:grid-cols-2 gap-4">
+        <div class="flex flex-col items-center space-y-2 mt-10p sm:mt-0">
           <i class="fa-solid fa-droplet text-2xl"></i>
           <p>{{ item.droplet-blurb }}</p>
         </div>
@@ -117,8 +125,10 @@ map:
     </div>
 
     <!-- Circular Image for Medium Screens and Above -->
-    <div class="hidden sm:flex sm:relative items-center coffee-circle justify-center">
-      <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
+    <div class="hidden sm:flex">
+      <div class="flex relative items-center coffee-circle justify-center">
+        <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
+      </div>
     </div>
 
   </div>
@@ -132,21 +142,21 @@ map:
 
 <section class="max-w-screen-2xl mx-auto" >
   {% for item in page.gallery %}
-  <div class="py-10p px-5p background-choco" >
+  <div class="py-15p sm:py-10p px-5p background-choco" >
     <div>
       <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
       <p class="leading-relaxed pb-5p">{{ item.paragraph }}</p>
       <p></p>
     </div>
-    <div class="grid grid-cols-4 grid-rows-2 gap-4" id="lightgallery">
+    <div class="sm:grid sm:grid-cols-4 sm:grid-rows-2 gap-4" id="lightgallery">
       <!-- Large Image Section (2x2 grid) -->
-      <div class="col-span-2 row-span-2 overflow-hidden relative h-full min-h-80">
+      <div class="col-span-2 row-span-2 overflow-hidden relative h-full min-h-30 sm:min-h-80 mb-2p sm:mb-0">
         <img class="absolute inset-0 w-full h-full object-cover" src="{{ item.images.large-image }}" alt="{{ item.images.large-image-label }}" />
       </div>
 
       <!-- Small Images Section (remaining 2 columns) -->
       {% for image in item.images.small-images %}
-      <div class="col-span-1 row-span-1 overflow-hidden relative h-full min-h-40">
+      <div class="col-span-1 row-span-1 overflow-hidden relative h-full min-h-30 sm:min-h-40 mb-2p sm:mb-0">
         <img class="absolute inset-0 w-full h-full object-cover" src="{{ image.image }}" alt="{{ image.label }}" />
       </div>
       {% endfor %}
@@ -160,7 +170,7 @@ map:
 
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.menu %}
-  <div class="py-10p px-5p">
+  <div class="pt-15p sm:pt-10p pb-30p sm:pb-10p px-5p">
     <div>
       <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
       <p>{{ item.paragraph-1 }}</p>
@@ -192,14 +202,24 @@ map:
 
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.story %}
-  <div class="grid grid-cols-2 gap-10 px-5p py-10p background-choco">
+  <div class="sm:grid sm:grid-cols-2 gap-10 px-5p pt-10p pb-15p sm:py-10p background-choco">
     <!-- Circular Image -->
-    <div class="relative flex items-center story-circle justify-center">
-      <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
+    <div class="hidden sm:flex">
+      <div class="relative items-center story-circle justify-center">
+        <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
+      </div>
     </div>
     
     <!-- Text Content -->
     <div class="flex flex-col justify-end items-start h-full space-y-4">
+
+      <!-- Circular Image on default-->
+      <div class="sm:hidden">
+        <div class="relative items-center story-circle-default justify-center">
+          <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
+        </div>
+      </div>
+
       <h3 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p">{{ item.title }}</h3>
       <p class="leading-relaxed">{{ item.paragraph-1 }}</p>
       <p class="leading-relaxed">{{ item.paragraph-2 }}</p>
@@ -219,10 +239,10 @@ map:
 
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.map %}
-  <div class="pt-10p pb-5p px-5p">
+  <div class="pt-15p sm:pt-10p pb-5p px-5p">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
       <!-- Map Embed -->
-      <div class="relative">
+      <div class="hidden sm:block relative">
         <iframe src="{{ item.map-embed }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       
@@ -253,6 +273,11 @@ map:
             <i class="fa-brands fa-instagram text-xl"></i>
             <span>{{ item.instagram }}</span>
         </a>
+    </div>
+
+    <!-- Map Embed -->
+    <div class="sm:hidden relative">
+      <iframe src="{{ item.map-embed }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     
     </div>
