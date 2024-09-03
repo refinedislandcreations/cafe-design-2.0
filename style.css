@@ -101,6 +101,32 @@ header {
 }
 
 
+.story-circle {
+  position: relative;
+  background-color: #694f36;
+  height: 38rem;
+  width: 38rem;
+  border-radius: 50%;
+  margin-top: -33%;
+  margin-left: -1%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-circle::before {
+  content: '';
+  position: absolute;
+  background-color: #694f36;
+  height: 42rem;
+  width: 42rem;
+  border-radius: 50%;
+  margin-top: -8%;
+  margin-left: 10%;
+}
+
+
+
 .button {
   display: inline-block;
   width: auto;
