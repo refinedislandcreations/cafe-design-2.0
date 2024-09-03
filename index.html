@@ -11,11 +11,19 @@ header:
  - image: /images/cafe-banner-image.png
    position: 50% 50%
    label:
-   title: Fuel Your Morning with Bold Brews & Bright Vibes
+   title: Fuel Your Morning with <span class="header-font"> Bold Brews & Bright Vibes </span> 
    sub-title: Crafting Coffee, Creating Connections
    cta: Order Now
    cta-url:
    cta-label:
+coffee:
+ - title: But first <span class="header-font">coffee...</span>
+   paragraph: "Before diving into the details, let’s take a moment to celebrate what brings us all together: our exceptional coffee. You wouldn't have stopped by if you weren’t as passionate about coffee as we are. So, let’s start with what we do best—crafting incredible brews."
+   image: /images/coffee-section-opt.png
+   position: center center
+   alt: "Your image description"
+   droplet-blurb: "At Rise & Grind, coffee is our craft. We use the finest beans to brew rich, flavorful cups that make every moment special."
+   leaf-blurb: "We’re committed to both exceptional coffee and eco-friendly practices. Our focus on sustainable sourcing ensures that your perfect brew supports a healthier planet."   
 story:
  - title: "Our Story: The Daily Rise"
    paragraph-1: "At Rise & Grind, our journey began with a simple vision: to transform every morning into a delightful experience. Our passion for coffee and community led us to create a space where quality brews and a warm atmosphere come together seamlessly. From sourcing the finest beans to perfecting our brewing techniques, every detail reflects our commitment to excellence and our love for crafting the ideal cup."
@@ -33,32 +41,39 @@ menu:
  - title: "Morning Specialties"
    paragraph-1: "Discover our morning specialties crafted with the finest ingredients to start your day right."
    items:
-    - menu-item: "Classic Latte"
-      menu-item-image: /images/coffee-cup.jpg
-      menu-item-label: "Classic Latte with a smooth blend of espresso and steamed milk."
+    - menu-item: "Classic "
+      menu-item-image: /images/menu-food-2.png
+      menu-item-label: 
     - menu-item: "Avocado Toast"
-      menu-item-image: /images/coffee-cup.jpg
-      menu-item-label: "Fresh avocado on toasted sourdough, topped with a sprinkle of chili flakes."
+      menu-item-image: /images/menu-drink-2.png
+      menu-item-label: 
     - menu-item: "Berry Smoothie"
-      menu-item-image: /images/coffee-cup.jpg
-      menu-item-label: "A refreshing mix of berries, banana, and yogurt to kickstart your morning."
+      menu-item-image: /images/menu-food-1.png
+      menu-item-label: 
+    - menu-item: "Avocado Toast"
+      menu-item-image: /images/menu-drink-3.png
+      menu-item-label: 
+    - menu-item: "Berry Smoothie"
+      menu-item-image: /images/menu-food-3.png
+      menu-item-label: 
    menu-pdf:
    menu-label:
    menu: View full menu
 gallery:
 - title: "Our Space: A Glimpse Inside"
+  paragraph: "At Rise & Grind, we believe that a vibrant, well-designed space is essential for fostering the kind of community we cherish. Our café isn’t just a place to grab a coffee; it’s a hub where creativity and connection thrive. With its inviting ambiance and cozy nooks, our space is perfect for co-working, brainstorming, and meeting with friends."
   images:
-    large-image: /images/coffee-cup.jpg
-    large-image-label: "Cozy Interior with Warm Lighting"
+    large-image: /images/cafe-2-opt.png
+    large-image-label: 
     small-images:
-      - image: /images/coffee-cup.jpg
-        label: "Barista at Work"
-      - image: /images/coffee-cup.jpg
-        label: "Comfortable Seating Area"
-      - image: /images/coffee-cup.jpg
-        label: "Outdoor Patio"
-      - image: /images/coffee-cup.jpg
-        label: "Outdoor Patio"
+      - image: /images/cafe-1-opt.png
+        label: 
+      - image: /images/cafe-3-opt.png
+        label: 
+      - image: /images/cafe-4-opt.png
+        label: 
+      - image: /images/cafe-5-opt.png
+        label: 
   instagram: /www.instagram com
   ig-label:
   ig-cta: check out our ig for more impressions
@@ -104,9 +119,106 @@ footer:
 
 
 
+<!--------But first coffee-------------->
+
+<section class="max-w-screen-2xl mx-auto">
+  {% for item in page.coffee %}
+  <div class="grid grid-cols-2 gap-10 py-10p pl-5p">
+    <!-- Text Content -->
+    <div class="flex flex-col justify-start items-start space-y-4">
+      <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
+      <p class="leading-relaxed">{{ item.paragraph }}</p>
+      
+      <!-- Icons with Blurbs -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col items-center space-y-2">
+          <i class="fa-solid fa-droplet text-2xl"></i>
+          <p>{{ item.droplet-blurb }}</p>
+        </div>
+        <div class="flex flex-col items-center space-y-2">
+          <i class="fa-solid fa-leaf text-2xl"></i>
+          <p>{{ item.leaf-blurb }}</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Circular Image -->
+    <div class="relative flex items-center coffee-circle justify-center">
+      <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
+    </div>
+
+  </div>
+  {% endfor %}
+</section>
+
+
+
+<!--------GALLERY------>
+
+<section class="max-w-screen-2xl mx-auto" >
+  {% for item in page.gallery %}
+  <div class="py-10p px-5p -mt-15p background-choco" >
+    <div>
+      <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
+      <p class="leading-relaxed pb-5p">{{ item.paragraph }}</p>
+      <p></p>
+    </div>
+    <div class="grid grid-cols-4 grid-rows-2 gap-4" id="lightgallery">
+      <!-- Large Image Section (2x2 grid) -->
+      <div class="col-span-2 row-span-2 overflow-hidden relative h-full min-h-80">
+        <img class="absolute inset-0 w-full h-full object-cover" src="{{ item.images.large-image }}" alt="{{ item.images.large-image-label }}" />
+      </div>
+
+      <!-- Small Images Section (remaining 2 columns) -->
+      {% for image in item.images.small-images %}
+      <div class="col-span-1 row-span-1 overflow-hidden relative h-full min-h-40">
+        <img class="absolute inset-0 w-full h-full object-cover" src="{{ image.image }}" alt="{{ image.label }}" />
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+
+<!--------MENU --------->
+
+<section class="max-w-screen-2xl mx-auto">
+  {% for item in page.menu %}
+  <div class="py-10p px-5p">
+    <div>
+      <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
+      <p>{{ item.paragraph-1 }}</p>
+    </div>
+    <div class="overflow-x-auto whitespace-nowrap py-4 custom-scrollbar">
+      <div class="flex items-start">
+        {% for menu_item in item.items %}
+        <div class="block flex-shrink-0 w-80 mx-4 relative group">
+          <img class="w-full h-80 object-cover" src="{{ menu_item.menu-item-image }}" alt="{{ menu_item.menu-item-label }}" />
+          <div class="absolute inset-x-0 bottom-0 bg-white bg-opacity-75 p-3 flex items-center justify-between">
+            <span class="text-lg font-semibold">{{ menu_item.menu-item }}</span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-span-2 text-center mt-5p">
+      <a href="{{ item.menu-pdf }}" aria-label="{{ item.menu-label }}" class="button">{{ item.menu }}</a>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+
+
+
+
+
+<!--------OUR STORY-------------->
+
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.story %}
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 p-10p">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 px-5p py-10p background-choco">
     <!-- Text Content -->
     <div class="lg:col-span-2 flex flex-col justify-end items-start h-full space-y-4">
       <h3 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p">{{ item.title }}</h3>
@@ -138,64 +250,7 @@ footer:
 
 
 
-
-
-
-<section class="max-w-screen-2xl mx-auto">
-  {% for item in page.menu %}
-  <div class="background-choco p-10p">
-    <div>
-      <h3 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-5p ">{{ item.title }}</h3>
-      <p>{{ item.paragraph-1 }}</p>
-    </div>
-    <div class="overflow-x-auto whitespace-nowrap py-4 custom-scrollbar">
-      <div class="flex items-start">
-        {% for menu_item in item.items %}
-        <div class="block flex-shrink-0 w-80 mx-4 relative group">
-          <img class="w-full h-80 object-cover" src="{{ menu_item.menu-item-image }}" alt="{{ menu_item.menu-item-label }}" />
-          <div class="absolute inset-x-0 bottom-0 bg-white bg-opacity-75 p-3 flex items-center justify-between">
-            <span class="text-lg font-semibold">{{ menu_item.menu-item }}</span>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-    <div class="col-span-2 text-center mt-5p">
-      <a href="{{ item.menu-pdf }}" aria-label="{{ item.menu-label }}" class="button">{{ item.menu }}</a>
-    </div>
-  </div>
-  {% endfor %}
-</section>
-
-
-
-
-<section class="max-w-screen-2xl mx-auto">
-  {% for item in page.gallery %}
-  <div class="p-10p">
-    <div>
-      <h3 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-5p ">{{ item.title }}</h3>
-    </div>
-    <div class="grid grid-cols-4 grid-rows-2 gap-4">
-      <!-- Large Image Section (2x2 grid) -->
-      <div class="col-span-2 row-span-2 overflow-hidden relative h-full min-h-80">
-        <img class="absolute inset-0 w-full h-full object-cover" src="{{ item.images.large-image }}" alt="{{ item.images.large-image-label }}" />
-      </div>
-
-      <!-- Small Images Section (remaining 2 columns) -->
-      {% for image in item.images.small-images %}
-      <div class="col-span-1 row-span-1 overflow-hidden relative h-full min-h-40">
-        <img class="absolute inset-0 w-full h-full object-cover" src="{{ image.image }}" alt="{{ image.label }}" />
-      </div>
-      {% endfor %}
-    </div>
-    <div>
-      <a href="{{ item.instagram }}" aria-label="{{ item.ig-label }}" class="button">{{ item.ig-cta }}</a>
-  </div>
-  </div>
-  {% endfor %}
-</section>
-
+<!-------FIND US----------->
 
 <section class="max-w-screen-2xl mx-auto">
   {% for item in page.map %}
