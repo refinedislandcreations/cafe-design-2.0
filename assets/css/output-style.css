@@ -1202,7 +1202,63 @@ body {
     width: 25rem;
   }
 
+  .story-circle {
+    height: 21rem;
+    width: 21rem;
+    margin-top: -56%;
+    margin-left: 18%;
+  }
+
+  .story-circle::before {
+    height: 24rem;
+    width: 24rem;
+    margin-top: -8%;
+    margin-left: 13%;
+  }
+
 }
+
+
+@media (min-width:900px) {
+
+  .coffee-circle {
+    height: 26rem;
+    width: 26rem;
+    margin-top: -47%;
+    margin-left: 9%;
+    margin-right: -4%;
+  }
+
+  .coffee-circle::before {
+    height: 30rem;
+    width: 30rem;
+  }
+
+  .story-circle {
+    margin-top: -59%;
+    margin-left: 27%;
+  }
+
+}
+
+
+@media (min-width:1024px) {
+  .header-text-font {
+  font-size: 3.25rem; 
+  line-height: 1.1;
+  }
+
+  .header-font {
+    font-size: 4.2rem;
+  }
+
+  .story-circle {
+    margin-top: -52%;
+    margin-left: 35%;
+  }
+
+}
+
 
 @media (min-width: 640px) {
   .sm\:mb-0 {
@@ -1300,9 +1356,10 @@ body {
   }
 }
 
+
 @media (min-width: 768px) {
-  .md\:mr-10p {
-    margin-right: 10%;
+  .md\:mr-20p {
+    margin-right: 20%;
   }
   .md\:flex {
     display: flex;
@@ -1313,16 +1370,17 @@ body {
   .md\:pb-5p {
     padding-bottom: 5%;
   }
-  .md\:pt-2p {
-    padding-top: 2%;
-  }
   .md\:text-5xl {
     font-size: 3rem;
     line-height: 1;
   }
 }
 
+
 @media (min-width: 1024px) {
+  .lg\:mr-30p {
+    margin-right: 30%;
+  }
   .lg\:pt-0 {
     padding-top: 0px;
   }

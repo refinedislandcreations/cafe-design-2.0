@@ -467,3 +467,44 @@ body {
   }
 
 }
+
+
+@media (min-width:900px) {
+
+  .coffee-circle {
+    height: 26rem;
+    width: 26rem;
+    margin-top: -47%;
+    margin-left: 9%;
+    margin-right: -4%;
+  }
+
+  .coffee-circle::before {
+    height: 30rem;
+    width: 30rem;
+  }
+
+  .story-circle {
+    margin-top: -59%;
+    margin-left: 27%;
+  }
+
+}
+
+
+@media (min-width:1024px) {
+  .header-text-font {
+  font-size: 3.25rem; 
+  line-height: 1.1;
+  }
+
+  .header-font {
+    font-size: 4.2rem;
+  }
+
+  .story-circle {
+    margin-top: -52%;
+    margin-left: 35%;
+  }
+
+}
