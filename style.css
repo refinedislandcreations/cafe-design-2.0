@@ -98,8 +98,8 @@ body {
 .coffee-circle {
   position: relative;
   background-color: #694f36;
-  height: 18rem;
-  width: 18rem;
+  height: 20rem;
+  width: 20rem;
   border-radius: 50%;
   margin-top: -33%;
   margin-left: -1%;
@@ -172,11 +172,11 @@ body {
 .story-circle {
   position: relative;
   background-color: #694f36;
-  height: 38rem;
-  width: 38rem;
+  height: 18rem;
+  width: 18rem;
   border-radius: 50%;
-  margin-top: -33%;
-  margin-left: -44%;
+  margin-top: -54%;
+  margin-left: 22%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,13 +186,12 @@ body {
   content: '';
   position: absolute;
   background-color: #694f36;
-  height: 42rem;
-  width: 42rem;
+  height: 21rem;
+  width: 21rem;
   border-radius: 50%;
   margin-top: -8%;
-  margin-left: 10%;
+  margin-left: 13%;
 }
-
 
 
 .button {
