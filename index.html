@@ -17,7 +17,7 @@ header:
    cta-url:
    cta-label:
 coffee:
- - title: But first <span class="header-font">coffee...</span>
+ - title: But first <br><span class="header-font">coffee...</span>
    paragraph: "Before diving into the details, let’s take a moment to celebrate what brings us all together: our exceptional coffee. You wouldn't have stopped by if you weren’t as passionate about coffee as we are. So, let’s start with what we do best—crafting incredible brews."
    image: /images/coffee-section-opt.png
    position: center center
@@ -25,7 +25,7 @@ coffee:
    droplet-blurb: "At Rise & Grind, coffee is our craft. We use the finest beans to brew rich, flavorful cups that make every moment special."
    leaf-blurb: "We’re committed to both exceptional coffee and eco-friendly practices. Our focus on sustainable sourcing ensures that your perfect brew supports a healthier planet."   
 story:
- - title: "Our Story: The Daily Rise"
+ - title: <span class="header-font">Our Story:</span><br> The Daily Rise
    paragraph-1: "At Rise & Grind, our journey began with a simple vision: to transform every morning into a delightful experience. Our passion for coffee and community led us to create a space where quality brews and a warm atmosphere come together seamlessly. From sourcing the finest beans to perfecting our brewing techniques, every detail reflects our commitment to excellence and our love for crafting the ideal cup."
    paragraph-2: "But we’re more than just a café—we’re a community hub where people gather to share stories, enjoy a leisurely breakfast, and savor the little moments. Our space is designed to be inviting and vibrant, offering a retreat from the hustle and bustle of everyday life. Whether you're catching up with friends or enjoying a quiet moment to yourself, Rise & Grind is here to make your mornings brighter and your days more fulfilling."
    cta: Get in touch
@@ -34,26 +34,26 @@ story:
    image: /images/our-story.png
    alt:
 menu:
- - title: "Morning Specialties"
+ - title: Morning <span class="header-font">Specialties</span>
    paragraph-1: "Discover our morning specialties crafted with the finest ingredients to start your day right."
    items:
-    - menu-item: "Classic "
+    - menu-item: "Macaron"
       menu-item-image: /images/menu-food-2.png
       menu-item-label: 
       position: "50% 50%"
-    - menu-item: "Avocado Toast"
+    - menu-item: "Misty Latte"
       menu-item-image: /images/menu-drink-2.png
       menu-item-label: 
       position: "50% 50%"
-    - menu-item: "Berry Smoothie"
+    - menu-item: "Croissant"
       menu-item-image: /images/menu-food-1.png
       menu-item-label: 
       position: "50% 50%"
-    - menu-item: "Avocado Toast"
+    - menu-item: "Cappuccino"
       menu-item-image: /images/menu-drink-3.png
       menu-item-label: 
       position: "50% 50%"
-    - menu-item: "Berry Smoothie"
+    - menu-item: "Sandwich"
       menu-item-image: /images/menu-food-3.png
       menu-item-label: 
       position: "50% 50%"
@@ -61,7 +61,7 @@ menu:
    menu-label:
    menu: View full menu
 gallery:
- - title: "Our Space: A Glimpse Inside"
+ - title: Our Space,<br><span class="header-font">A Glimpse Inside</span>
    paragraph: "At Rise & Grind, we believe that a vibrant, well-designed space is essential for fostering the kind of community we cherish. Our café isn’t just a place to grab a coffee; it’s a hub where creativity and connection thrive. With its inviting ambiance and cozy nooks, our space is perfect for co-working, brainstorming, and meeting with friends."
    images:
     large-image: /images/cafe-2-opt.png
@@ -79,7 +79,7 @@ gallery:
    ig-label:
    ig-cta: check out our ig for more impressions
 map:
- - title: "Visit & Follow Us"
+ - title: Visit & <br><span class="header-font">Follow Us</span>
    address: "Jalan Bali, 12345 Bali"
    whatsapp-nr: "+62 123 4567"
    email: "contact@example.com"
@@ -102,14 +102,12 @@ map:
       </div>
     </div>
 
-    <div class="sm:grid sm:grid-cols-2 gap-10 py-15p sm:py-10p pl-5p pr-5p sm:pr-0">
+    <div class="sm:grid sm:grid-cols-2 gap-10 pb-15p sm:pb-10p sm:pt-10p pl-5p pr-5p sm:pr-0">
 
     <!-- Text Content -->
     <div class="flex flex-col justify-start items-start space-y-4">
-      <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
+      <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold mr-20p sm:mr-0">{{ item.title }}</h3>
       <p class="leading-relaxed">{{ item.paragraph }}</p>
-
-      
 
       <!-- Icons with Blurbs -->
       <div class="sm:grid sm:grid-cols-2 gap-4">
@@ -117,7 +115,7 @@ map:
           <i class="fa-solid fa-droplet text-2xl"></i>
           <p>{{ item.droplet-blurb }}</p>
         </div>
-        <div class="flex flex-col items-center space-y-2">
+        <div class="flex flex-col items-center space-y-2 mt-10p sm:mt-0">
           <i class="fa-solid fa-leaf text-2xl"></i>
           <p>{{ item.leaf-blurb }}</p>
         </div>
@@ -145,18 +143,17 @@ map:
   <div class="py-15p sm:py-10p px-5p background-choco" >
     <div>
       <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
-      <p class="leading-relaxed pb-5p">{{ item.paragraph }}</p>
-      <p></p>
+      <p class="leading-relaxed pb-5p pt-5p">{{ item.paragraph }}</p>
     </div>
     <div class="sm:grid sm:grid-cols-4 sm:grid-rows-2 gap-4" id="lightgallery">
       <!-- Large Image Section (2x2 grid) -->
-      <div class="col-span-2 row-span-2 overflow-hidden relative h-full min-h-30 sm:min-h-80 mb-2p sm:mb-0">
+      <div class="col-span-2 row-span-2 overflow-hidden relative h-full min-h-30 sm:min-h-80 mb-5p sm:mb-0">
         <img class="absolute inset-0 w-full h-full object-cover" src="{{ item.images.large-image }}" alt="{{ item.images.large-image-label }}" />
       </div>
 
       <!-- Small Images Section (remaining 2 columns) -->
       {% for image in item.images.small-images %}
-      <div class="col-span-1 row-span-1 overflow-hidden relative h-full min-h-30 sm:min-h-40 mb-2p sm:mb-0">
+      <div class="col-span-1 row-span-1 overflow-hidden relative h-full min-h-30 sm:min-h-40 mb-5p sm:mb-0">
         <img class="absolute inset-0 w-full h-full object-cover" src="{{ image.image }}" alt="{{ image.label }}" />
       </div>
       {% endfor %}
@@ -173,7 +170,7 @@ map:
   <div class="pt-15p sm:pt-10p pb-30p sm:pb-10p px-5p">
     <div>
       <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
-      <p>{{ item.paragraph-1 }}</p>
+      <p class="py-5p">{{ item.paragraph-1 }}</p>
     </div>
     <div class="overflow-x-auto whitespace-nowrap py-4 custom-scrollbar">
       <div class="flex items-start">
@@ -187,7 +184,7 @@ map:
         {% endfor %}
       </div>
     </div>
-    <div class="col-span-2 text-center mt-5p">
+    <div class="col-span-2 text-center mt-10p sm:mt-5p">
       <a href="{{ item.menu-pdf }}" aria-label="{{ item.menu-label }}" class="button">{{ item.menu }}</a>
     </div>
   </div>
@@ -211,7 +208,7 @@ map:
     </div>
     
     <!-- Text Content -->
-    <div class="flex flex-col justify-end items-start h-full space-y-4">
+    <div class="flex flex-col justify-end sm:items-start h-full space-y-4">
 
       <!-- Circular Image on default-->
       <div class="sm:hidden">
@@ -220,12 +217,13 @@ map:
         </div>
       </div>
 
-      <h3 class="header-font text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p">{{ item.title }}</h3>
+      <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold text-right sm:text-left">{{ item.title }}</h3>
       <p class="leading-relaxed">{{ item.paragraph-1 }}</p>
       <p class="leading-relaxed">{{ item.paragraph-2 }}</p>
-      <a href="{{ item.cta-url }}" aria-label="{{ item.cta-label }}" class="button inline-block mt-5p">
-        {{ item.cta }}
-      </a>
+      <div class="text-center mt-10p sm:mt-5p">
+        <a href="{{ item.cta-url }}" aria-label="{{ item.cta-label }}" class="button"> {{ item.cta }} </a>
+      </div>
+      
     </div>
     
   </div>
@@ -242,8 +240,8 @@ map:
   <div class="pt-15p sm:pt-10p pb-5p px-5p">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
       <!-- Map Embed -->
-      <div class="hidden sm:block relative">
-        <iframe src="{{ item.map-embed }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="hidden sm:block relative rounded-lg shadow-sm">
+        <iframe src="{{ item.map-embed }}" width="100%" height="450" class="rounded-lg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       
       <!-- Contact Details -->
@@ -277,7 +275,7 @@ map:
 
     <!-- Map Embed -->
     <div class="sm:hidden relative">
-      <iframe src="{{ item.map-embed }}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="{{ item.map-embed }}" width="100%" height="450" class="rounded-lg" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     
     </div>
@@ -286,9 +284,9 @@ map:
 
   <!-- Footer Credit -->
   <div class="text-center text-gray-500 py-5">
-    <p>&copy; All rights reserved.</p>
+    <p>&copy; {{ "now" | date: "%Y" }} All rights reserved.</p>
     <a href="https://refinedislandcreations.com/" class="pt-2" target="_blank" rel="noopener noreferrer" aria-label="Link to Refined Island Creations website design and development">
-        Designed and built by <span class="underline">Refined Island Creations</span>.
+        Designed and built by <span class="underline font-semibold">Refined Island Creations</span>.
     </a>
   </div>
 </section>

@@ -79,6 +79,12 @@ body {
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 0.025em;
+  font-size: 2rem;
+}
+
+.header-text-font {
+  font-size: 1.7rem; 
+  line-height: 2rem;
 }
 
 .text-white {
@@ -92,8 +98,8 @@ body {
 .coffee-circle {
   position: relative;
   background-color: #694f36;
-  height: 38rem;
-  width: 38rem;
+  height: 18rem;
+  width: 18rem;
   border-radius: 50%;
   margin-top: -33%;
   margin-left: -1%;
@@ -106,8 +112,8 @@ body {
   content: '';
   position: absolute;
   background-color: #694f36;
-  height: 42rem;
-  width: 42rem;
+  height: 22rem;
+  width: 22rem;
   border-radius: 50%;
   z-index: -1; /* Pushes the background behind the image */
   margin-top: -8%;
@@ -117,11 +123,11 @@ body {
 .coffee-circle-default {
   position: relative;
   background-color: #694f36;
-  height: 15rem;
-  width: 15rem;
+  height: 13rem;
+  width: 13rem;
   border-radius: 50%;
   margin-top: -37%;
-  margin-left: 19%;
+  margin-left: 37%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,8 +137,8 @@ body {
   content: '';
   position: absolute;
   background-color: #694f36;
-  height: 17rem;
-  width: 17rem;
+  height: 15rem;
+  width: 15rem;
   border-radius: 50%;
   z-index: -1;
   margin-top: -5%;
@@ -320,4 +326,107 @@ body {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #555; /* Color when hovered */
+}
+
+
+
+@media (min-width:354px) {
+
+  .header-font {
+    font-size: 2.3rem;
+  }
+  
+  .header-text-font {
+    font-size: 2rem; 
+  line-height: 2.25rem; 
+  }
+
+  .coffee-circle-default {
+    height: 15rem;
+    width: 15rem;
+    margin-top: -37%;
+    margin-left: 37%;
+  }
+  
+  .coffee-circle-default::before {
+    height: 17rem;
+    width: 17rem;
+    margin-top: -5%;
+    margin-left: -11%;
+  }
+}
+
+@media (min-width:420px) {
+
+  .header-font {
+    font-size: 2.6rem;
+  }
+  
+  .header-text-font {
+    font-size: 2.3rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+  }
+
+  .coffee-circle-default {
+    height: 17rem;
+    width: 17rem;
+    margin-top: -34%;
+    margin-left: 48%;
+  }
+  
+  .coffee-circle-default::before {
+    height: 19rem;
+    width: 19rem;
+  }
+}
+
+@media (min-width:460px) {
+
+  .story-circle-default {
+    height: 18rem;
+    width: 18rem;
+    margin-top: -29%;
+    margin-left: -17%;
+  }
+
+  .story-circle-default::before {
+    height: 19rem;
+    width: 19rem;
+  }
+
+}
+
+@media (min-width:514px) {
+
+  .header-text-font {
+    font-size: 2.8rem;
+    line-height: 3rem;
+  }
+
+  .header-font {
+    font-size: 3.2rem;
+  }
+
+  .coffee-circle-default::before {
+    height: 21rem;
+    width: 21rem;
+  }
+
+  .coffee-circle-default {
+    height: 19rem;
+    width: 19rem;
+    margin-top: -36%;
+    margin-left: 49%;
+  }
+
+}
+
+
+@media (min-width:582px) {
+
+  .coffee-circle-default {
+    margin-top: -30%;
+    margin-left: 56%;
+  }
+
 }

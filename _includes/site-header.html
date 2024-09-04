@@ -1,11 +1,11 @@
 <!-- Unified Header and Background Section -->
 <section class="max-w-screen-2xl mx-auto relative h-screen">
-    <div class="px-5p pt-5p">
+    <div class="px-5p pt-5p md:pt-2p">
         <!-- Background Image -->
         {% for item in page.header %}
         <div class="bg-cover bg-no-repeat object-cover absolute inset-0 -z-10" style="background-image: linear-gradient(to right, rgba(21, 19, 18, 0.99), rgba(66, 53, 47, 0.37)), url('{{ item.image }}'); background-position: {{ item.position }};">
             <div class="flex flex-col justify-center items-start h-full px-5p text-white">
-                <p class="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-5p">{{ item.sub-title }}<br> <span class="header-font">{{ item.title }}</span></p>
+                <p class="text-white header-text-font pb-5p sm:mt-20p">{{ item.sub-title }}<br> <span class="header-font">{{ item.title }}</span></p>
                 <a href="{{ item.cta-url }}" aria-label="{{ item.cta-label }}" class="button inline-block mb-5p">{{ item.cta }}</a>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="flex items-center justify-between w-full header-logo-position">
                 <!-- Logo Link -->
                 <a href="/index.html" aria-label="Go to homepage" class="z-30">
-                    <img src="/images/rise-and-grind-logo-optimized.png" alt="Rise & Grind Logo" class="w-24 sm:w-44">
+                    <img src="/images/rise-and-grind-logo-optimized.png" alt="Rise & Grind Logo" class="w-24">
                 </a>
 
                 <div class="text-white hidden md:flex">
