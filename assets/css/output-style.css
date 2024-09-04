@@ -754,11 +754,6 @@ a {
 .underline {
   text-decoration-line: underline;
 }
-.shadow-sm {
-  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
 
 
 /* ----------- Default Styles to apply to the whole project  --------- */
@@ -1070,16 +1065,16 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Color of the track */
+  background: #694f36; /* Color of the track */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #888; /* Color of the scrollbar thumb */
+  background: #eee6d9; /* Color of the scrollbar thumb */
   border-radius: 8px; /* Rounded corners */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color when hovered */
+  background: #694f36; /* Color when hovered */
 }
 
 
@@ -1185,6 +1180,29 @@ body {
 
 }
 
+@media (min-width:700px) {
+
+  .coffee-circle {
+    margin-left: 4%;
+  }
+
+}
+
+@media (min-width:768px) {
+
+  .coffee-circle {
+    height: 23rem;
+    width: 25rem;
+    margin-top: -43%;
+    margin-left: 4%;
+  }
+
+  .coffee-circle::before {
+    height: 25rem;
+    width: 25rem;
+  }
+
+}
 
 @media (min-width: 640px) {
   .sm\:mb-0 {
@@ -1204,9 +1222,6 @@ body {
   }
   .sm\:mt-5p {
     margin-top: 5%;
-  }
-  .sm\:block {
-    display: block;
   }
   .sm\:flex {
     display: flex;
@@ -1232,8 +1247,14 @@ body {
   .sm\:grid-rows-2 {
     grid-template-rows: repeat(2, minmax(0, 1fr));
   }
+  .sm\:flex-col {
+    flex-direction: column;
+  }
   .sm\:items-start {
     align-items: flex-start;
+  }
+  .sm\:justify-center {
+    justify-content: center;
   }
   .sm\:gap-0 {
     gap: 0px;
@@ -1279,13 +1300,18 @@ body {
   }
 }
 
-
 @media (min-width: 768px) {
+  .md\:mr-10p {
+    margin-right: 10%;
+  }
   .md\:flex {
     display: flex;
   }
   .md\:hidden {
     display: none;
+  }
+  .md\:pb-5p {
+    padding-bottom: 5%;
   }
   .md\:pt-2p {
     padding-top: 2%;
@@ -1296,11 +1322,7 @@ body {
   }
 }
 
-
 @media (min-width: 1024px) {
-  .lg\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .lg\:pt-0 {
     padding-top: 0px;
   }

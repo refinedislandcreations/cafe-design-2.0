@@ -315,16 +315,16 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Color of the track */
+  background: #694f36; /* Color of the track */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #888; /* Color of the scrollbar thumb */
+  background: #eee6d9; /* Color of the scrollbar thumb */
   border-radius: 8px; /* Rounded corners */
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color when hovered */
+  background: #694f36; /* Color when hovered */
 }
 
 
@@ -426,6 +426,44 @@ body {
   .coffee-circle-default {
     margin-top: -30%;
     margin-left: 56%;
+  }
+
+}
+
+@media (min-width:700px) {
+
+  .coffee-circle {
+    margin-left: 4%;
+  }
+
+}
+
+@media (min-width:768px) {
+
+  .coffee-circle {
+    height: 23rem;
+    width: 25rem;
+    margin-top: -43%;
+    margin-left: 4%;
+  }
+
+  .coffee-circle::before {
+    height: 25rem;
+    width: 25rem;
+  }
+
+  .story-circle {
+    height: 21rem;
+    width: 21rem;
+    margin-top: -56%;
+    margin-left: 18%;
+  }
+
+  .story-circle::before {
+    height: 24rem;
+    width: 24rem;
+    margin-top: -8%;
+    margin-left: 13%;
   }
 
 }
