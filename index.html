@@ -151,7 +151,7 @@ map:
   {% for item in page.gallery %}
   <div class="py-15p sm:py-10p px-5p background-choco" >
     <div>
-      <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
+      <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold" data-aos="fade-right">{{ item.title }}</h3>
       <p class="leading-relaxed pb-5p pt-5p sm:pt-0">{{ item.paragraph }}</p>
     </div>
     <div class="sm:grid sm:grid-cols-4 sm:grid-rows-2 gap-4 sm:gap-1.5" id="lightgallery">
@@ -178,7 +178,7 @@ map:
   {% for item in page.menu %}
   <div class="pt-15p sm:pt-10p pb-30p sm:pb-10p px-5p">
     <div>
-      <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
+      <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold" data-aos="fade-right">{{ item.title }}</h3>
       <p class="py-5p sm:py-0">{{ item.paragraph-1 }}</p>
     </div>
     <div class="overflow-x-auto whitespace-nowrap py-4 custom-scrollbar">
@@ -225,7 +225,7 @@ map:
         <!-- Circular Image for Medium Screens and Above -->
         <div class="hidden sm:grid sm:grid-cols-2">
           <div data-aos="fade-left">
-            <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold text-right sm:text-left">{{ item.title }}</h3>
+            <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold text-right sm:text-left" data-aos="fade-left">{{ item.title }}</h3>
           </div>
           <div class="flex relative items-center story-circle justify-center">
             <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
@@ -233,7 +233,7 @@ map:
         </div>
 
         <div>
-          <h3 class="text-2xl pb-2p font-bold text-right sm:hidden">{{ item.title }}</h3>
+          <h3 class="text-2xl pb-2p font-bold text-right sm:hidden" data-aos="fade-right">{{ item.title }}</h3>
           <p class="leading-relaxed">{{ item.paragraph-1 }}</p>
           <p class="leading-relaxed">{{ item.paragraph-2 }}</p>
           <div class="text-center mt-10p sm:mt-5p">
@@ -262,7 +262,7 @@ map:
       
       <!-- Contact Details -->
       <div class="space-y-4 sm:flex sm:flex-col sm:justify-center">
-        <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold">{{ item.title }}</h3>
+        <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold" data-aos="fade-right">{{ item.title }}</h3>
     
         <!-- Address (You may want to link this to a map service like Google Maps) -->
         <a href="https://www.google.com/maps/search/{{ item.address | urlencode }}" class="flex items-center space-x-2" target="_blank" rel="noopener noreferrer">

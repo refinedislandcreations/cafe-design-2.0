@@ -6,7 +6,7 @@
         <div class="bg-cover bg-no-repeat object-cover absolute inset-0 -z-10" style="background-image: linear-gradient(to right, rgba(21, 19, 18, 0.99), rgba(66, 53, 47, 0.37)), url('{{ item.image }}'); background-position: {{ item.position }};">
             <div class="flex flex-col justify-center items-start h-full px-5p text-white">
                 <p class="text-white header-text-font pb-5p sm:mt-20p md:mr-20p lg:mr-30p">{{ item.sub-title }}<br> <span class="header-font">{{ item.title }}</span></p>
-                <a href="{{ item.cta-url }}" aria-label="{{ item.cta-label }}" class="button inline-block mb-5p">{{ item.cta }}</a>
+                <a href="{{ item.cta-url }}" aria-label="{{ item.cta-label }}" class="button inline-block mb-5p" data-aos="fade-right">{{ item.cta }}</a>
             </div>
         </div>
         {% endfor %}
