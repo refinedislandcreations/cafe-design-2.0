@@ -216,7 +216,7 @@ map:
     <div class="flex flex-col sm:grid justify-end sm:items-start h-full space-y-4">
 
         <!-- Circular Image on default-->
-        <div class="sm:hidden">
+        <div class="sm:hidden" data-aos="fade-right">
           <div class="relative items-center story-circle-default justify-center">
             <img loading="lazy" class="absolute inset-0 w-full h-full rounded-full object-cover" src="{{ item.image }}" style="object-position: {{ item.position }};" alt="{{ item.alt }}" />
           </div>
@@ -224,7 +224,7 @@ map:
 
         <!-- Circular Image for Medium Screens and Above -->
         <div class="hidden sm:grid sm:grid-cols-2">
-          <div>
+          <div data-aos="fade-left">
             <h3 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl pb-2p font-bold text-right sm:text-left">{{ item.title }}</h3>
           </div>
           <div class="flex relative items-center story-circle justify-center">
