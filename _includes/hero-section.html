@@ -163,9 +163,7 @@
         "-=0.2"
       );
 
-      // REMOVED: Floating button animation
-
-      // Parallax effect
+      // CORRECTED Parallax effect - moves background UP when scrolling down
       window.addEventListener("scroll", function () {
         const scrolled = window.pageYOffset;
         const hero = document.getElementById("hero");
@@ -173,11 +171,12 @@
 
         if (hero && background) {
           const heroHeight = hero.offsetHeight;
-          const rate = scrolled * 0.5;
+          // Use negative rate to move background UP when scrolling down
+          const rate = scrolled * -0.9; // Changed to negative value
 
           if (scrolled < heroHeight) {
             background.style.transform = `translateY(${rate}px) scale(${
-              1 + rate * 0.0005
+              1 + Math.abs(rate) * 0.0005 // Use absolute value for scale
             })`;
           }
         }
