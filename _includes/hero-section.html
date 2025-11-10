@@ -1,0 +1,187 @@
+<!-- Hero Section -->
+<section
+  id="hero"
+  class="relative h-screen flex items-center justify-start overflow-hidden bg-black"
+>
+  <!-- Background Image with Dark Filter - Full Screen -->
+  <div
+    class="fixed inset-0 w-screen h-screen bg-cover bg-center bg-no-repeat z-0 brightness-50"
+    id="hero-bg"
+    style="background-image: url('{{ include.section.background_image }}');"
+  ></div>
+
+  <!-- Dark Gradient Overlay -->
+  <div
+    class="absolute inset-0 z-10 bg-gradient-to-r from-black/95 via-black/85 to-black/60"
+  ></div>
+
+  <!-- Decorative Elements -->
+  <div
+    class="absolute top-0 right-0 w-64 h-64 -mt-32 -mr-32 bg-blue-500/5 rounded-full z-10 opacity-0"
+    id="decoration-circle-1"
+  ></div>
+  <div
+    class="absolute bottom-32 right-48 w-32 h-32 bg-blue-500/5 rounded-full z-10 opacity-0"
+    id="decoration-circle-2"
+  ></div>
+
+  <!-- Content -->
+  <div
+    class="relative z-20 text-white px-6 sm:px-8 md:px-12 lg:px-16 xl:px-24 max-w-7xl mx-0 w-full"
+  >
+    <!-- Main Heading -->
+    <h1
+      id="hero-title"
+      class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal mb-4 opacity-0 transform -translate-x-20 text-gray-200"
+    >
+      {{ include.section.title }}
+    </h1>
+
+    <!-- Subtitle -->
+    <p
+      id="hero-subtitle"
+      class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-6 sm:mb-8 opacity-0 transform -translate-x-20 max-w-3xl font-bold text-white leading-tight sm:leading-tight md:leading-tight uppercase"
+    >
+      {{ include.section.subtitle }}
+    </p>
+
+    <!-- CTA Button -->
+    <div id="hero-button" class="opacity-0 transform -translate-x-20">
+      <a
+        href="{{ include.section.button_url | default: '#' }}"
+        class="inline-flex items-center bg-[#694f36] hover:bg-[#7a5f44] text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl relative overflow-hidden group"
+      >
+        <span class="relative z-10 text-sm sm:text-base"
+          >{{ include.section.button_text }}</span
+        >
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
+        ></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+    <div
+      id="scroll-indicator"
+      class="w-6 h-10 border-2 border-white rounded-full flex justify-center opacity-0"
+    >
+      <div class="w-1 h-3 bg-white rounded-full mt-2 animate-bounce"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GSAP Animation Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof gsap !== "undefined") {
+      const heroTimeline = gsap.timeline();
+
+      // Background animation
+      heroTimeline.fromTo(
+        "#hero-bg",
+        {
+          scale: 1.1,
+          filter: "brightness(0.3) blur(8px)",
+        },
+        {
+          scale: 1,
+          filter: "brightness(0.5) blur(0px)",
+          duration: 1.2,
+          ease: "power2.inOut",
+        }
+      );
+
+      // Decorative circles animation
+      heroTimeline.to(
+        "#decoration-circle-1",
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "back.out(1.4)",
+        },
+        "-=0.8"
+      );
+
+      heroTimeline.to(
+        "#decoration-circle-2",
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "back.out(1.4)",
+        },
+        "-=0.6"
+      );
+
+      // Title animation
+      heroTimeline.to(
+        "#hero-title",
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "back.out(1.4)",
+        },
+        "-=0.5"
+      );
+
+      // Subtitle animation
+      heroTimeline.to(
+        "#hero-subtitle",
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power3.out",
+        },
+        "-=0.4"
+      );
+
+      // Button animation
+      heroTimeline.to(
+        "#hero-button",
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          ease: "back.out(1.7)",
+        },
+        "-=0.3"
+      );
+
+      // Scroll indicator animation
+      heroTimeline.to(
+        "#scroll-indicator",
+        {
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        "-=0.2"
+      );
+
+      // REMOVED: Floating button animation
+
+      // Parallax effect
+      window.addEventListener("scroll", function () {
+        const scrolled = window.pageYOffset;
+        const hero = document.getElementById("hero");
+        const background = document.getElementById("hero-bg");
+
+        if (hero && background) {
+          const heroHeight = hero.offsetHeight;
+          const rate = scrolled * 0.5;
+
+          if (scrolled < heroHeight) {
+            background.style.transform = `translateY(${rate}px) scale(${
+              1 + rate * 0.0005
+            })`;
+          }
+        }
+      });
+    }
+  });
+</script>

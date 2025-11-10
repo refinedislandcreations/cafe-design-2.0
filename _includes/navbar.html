@@ -1,0 +1,285 @@
+<!-- Fixed Navbar -->
+<nav
+  class="fixed top-0 left-0 right-0 z-50 bg-[#1a120b] bg-opacity-90 backdrop-blur-sm transition-all duration-300 shadow-md"
+  id="navbar"
+>
+  <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-3 md:py-4">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a
+          href="/"
+          class="flex items-center focus:outline-none focus:ring-2 focus:ring-[#d4a574] rounded"
+          aria-label="Go to homepage"
+        >
+          <img
+            src="/images/rise-and-grind-logo-optimized.png"
+            alt="Rise & Grind Logo"
+            class="h-8 w-auto sm:h-10 md:h-12 transition-transform duration-300 hover:scale-105"
+            width="auto"
+            height="auto"
+          />
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <a
+          href="#"
+          class="nav-link text-white hover:text-[#d4a574] transition-all duration-300 relative py-2 px-1 font-medium"
+          >First Up</a
+        >
+        <a
+          href="#"
+          class="nav-link text-white hover:text-[#d4a574] transition-all duration-300 relative py-2 px-1 font-medium"
+          >Sneak Peek</a
+        >
+        <a
+          href="#"
+          class="nav-link text-white hover:text-[#d4a574] transition-all duration-300 relative py-2 px-1 font-medium"
+          >What's Brewing</a
+        >
+        <a
+          href="#"
+          class="nav-link text-white hover:text-[#d4a574] transition-all duration-300 relative py-2 px-1 font-medium"
+          >Our Story</a
+        >
+        <a
+          href="#"
+          class="nav-link text-white hover:text-[#d4a574] transition-all duration-300 relative py-2 px-1 font-medium"
+          >Visit Us</a
+        >
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button
+          type="button"
+          class="hamburger-button text-white hover:text-[#d4a574] focus:outline-none focus:text-[#d4a574] transition-all duration-300 p-2 rounded-md focus:ring-2 focus:ring-[#d4a574]"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          id="hamburger-button"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Full Overlay Mobile Menu -->
+<div
+  class="fixed inset-0 z-50 bg-[#1a120b] transform translate-y-full transition-transform duration-500 ease-in-out flex flex-col"
+  id="mobile-menu"
+  aria-modal="true"
+  aria-label="Main menu"
+  role="dialog"
+>
+  <!-- Mobile menu header -->
+  <div class="flex items-center justify-between p-4 border-b border-[#3c2a21]">
+    <a
+      href="/"
+      class="flex items-center focus:outline-none focus:ring-2 focus:ring-[#d4a574] rounded"
+      aria-label="Go to homepage"
+    >
+      <img
+        src="/images/rise-and-grind-logo-optimized.png"
+        alt="Rise & Grind Logo"
+        class="h-8 w-auto"
+        width="auto"
+        height="auto"
+      />
+    </a>
+    <button
+      type="button"
+      class="close-button text-white hover:text-[#d4a574] focus:outline-none transition-colors duration-300 p-2 rounded-md focus:ring-2 focus:ring-[#d4a574]"
+      aria-label="Close menu"
+      id="close-button"
+    >
+      <svg
+        class="h-8 w-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu links -->
+  <div class="flex-1 flex flex-col justify-center items-center py-10">
+    <nav
+      class="flex flex-col space-y-8 w-full max-w-sm px-4 text-center"
+      aria-label="Mobile navigation"
+    >
+      <a
+        href="#"
+        class="mobile-nav-link text-white hover:text-[#d4a574] text-2xl font-bold py-4 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:text-[#d4a574]"
+        >First Up</a
+      >
+      <a
+        href="#"
+        class="mobile-nav-link text-white hover:text-[#d4a574] text-2xl font-bold py-4 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:text-[#d4a574]"
+        >Sneak Peek</a
+      >
+      <a
+        href="#"
+        class="mobile-nav-link text-white hover:text-[#d4a574] text-2xl font-bold py-4 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:text-[#d4a574]"
+        >What's Brewing</a
+      >
+      <a
+        href="#"
+        class="mobile-nav-link text-white hover:text-[#d4a574] text-2xl font-bold py-4 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:text-[#d4a574]"
+        >Our Story</a
+      >
+      <a
+        href="#"
+        class="mobile-nav-link text-white hover:text-[#d4a574] text-2xl font-bold py-4 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:text-[#d4a574]"
+        >Visit Us</a
+      >
+    </nav>
+  </div>
+
+  <!-- Optional: Footer area for additional content -->
+  <div class="p-6 border-t border-[#3c2a21] text-center">
+    <p class="text-[#d4a574] text-sm">Rise & Grind Coffee Co.</p>
+  </div>
+</div>
+
+<!-- Spacer to prevent content from being hidden behind fixed navbar -->
+<div class="h-14 md:h-16"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.getElementById("navbar");
+    const hamburgerButton = document.getElementById("hamburger-button");
+    const closeButton = document.getElementById("close-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
+
+    // Navbar scroll effect
+    function handleScroll() {
+      if (window.scrollY > 30) {
+        navbar.classList.add("bg-opacity-95", "shadow-lg", "py-2");
+        navbar.classList.remove("bg-opacity-90", "py-3", "md:py-4");
+      } else {
+        navbar.classList.remove("bg-opacity-95", "shadow-lg", "py-2");
+        navbar.classList.add("bg-opacity-90", "py-3", "md:py-4");
+      }
+    }
+
+    // Mobile menu functions
+    function openMobileMenu() {
+      mobileMenu.classList.remove("translate-y-full");
+      document.body.style.overflow = "hidden";
+      hamburgerButton.setAttribute("aria-expanded", "true");
+      closeButton.focus();
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add("translate-y-full");
+      document.body.style.overflow = "";
+      hamburgerButton.setAttribute("aria-expanded", "false");
+      hamburgerButton.focus();
+    }
+
+    // Event listeners
+    window.addEventListener("scroll", handleScroll);
+
+    hamburgerButton.addEventListener("click", openMobileMenu);
+    closeButton.addEventListener("click", closeMobileMenu);
+
+    // Close mobile menu when clicking on links
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    // Close mobile menu on escape key
+    document.addEventListener("keydown", function (e) {
+      if (
+        e.key === "Escape" &&
+        !mobileMenu.classList.contains("translate-y-full")
+      ) {
+        closeMobileMenu();
+      }
+    });
+
+    // Trap focus inside mobile menu when open
+    document.addEventListener("keydown", function (e) {
+      if (
+        e.key === "Tab" &&
+        !mobileMenu.classList.contains("translate-y-full")
+      ) {
+        const focusableElements = mobileMenu.querySelectorAll(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            lastElement.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            firstElement.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    });
+
+    // Initialize scroll state
+    handleScroll();
+  });
+</script>
+
+<style>
+  /* Custom styles for hover effects */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #d4a574;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link:focus::after {
+    width: 100%;
+  }
+
+  /* Improved focus styles for better accessibility */
+  .nav-link:focus {
+    outline: none;
+  }
+
+  .nav-link:focus-visible {
+    outline: 2px solid #d4a574;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+</style>
