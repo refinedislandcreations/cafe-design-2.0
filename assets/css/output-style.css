@@ -2055,6 +2055,9 @@ body {
   .md\:mr-20p {
     margin-right: 20%;
   }
+  .md\:block {
+    display: block;
+  }
   .md\:flex {
     display: flex;
   }
