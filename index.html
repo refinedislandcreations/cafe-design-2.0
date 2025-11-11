@@ -8,7 +8,48 @@ hero:
   button_text: "Order Now"
   button_url: "/order"
   background_image: "/images/cafe-banner-image.png"
+
+coffee:
+  image: "/images/coffee-section-opt.png"
+  heading_top: "But first"
+  heading_main: "coffee..."
+  paragraph_1: >
+    Before diving into the details, let's take a moment to celebrate
+    what brings us all together: our exceptional coffee. You wouldn't
+    have stopped by if you weren't as passionate about coffee as we are.
+    So, let's start with what we do best—crafting incredible brews.
+  paragraph_2: >
+    At Rise & Grind, coffee is our craft. We use the finest beans to
+    brew rich, flavorful cups that make every moment special.
+  paragraph_3: >
+    We're committed to both exceptional coffee and eco-friendly practices.
+    Our focus on sustainable sourcing ensures that your perfect brew
+    supports a healthier planet.
+
+our_space:
+  tagline: "Welcome to"
+  title: "Our Space,"
+  subtitle: "A Glimpse Inside"
+  description: >
+    At Rise & Grind, we believe that a vibrant, well-designed space is
+    essential for fostering the kind of community we cherish. Our café
+    isn't just a place to grab a coffee; it's a hub where creativity and
+    connection thrive. With its inviting ambiance and cozy nooks, our
+    space is perfect for co-working, brainstorming, and meeting with
+    friends.
+  images:
+    - src: "/images/cafe-2-opt.png"
+      alt: "Rise & Grind Café Interior"
+    - src: "/images/cafe-1-opt.png"
+      alt: "Rise & Grind Café Detail"
+    - src: "/images/cafe-3-opt.png"
+      alt: "Rise & Grind Café Atmosphere"
+    - src: "/images/cafe-4-opt.png"
+      alt: "Rise & Grind Café Space"
+    - src: "/images/cafe-5-opt.png"
+      alt: "Rise & Grind Café Interior"
 ---
 
 {% include hero-section.html section=page.hero %} {% include coffee-section.html
-%} {% include our-space-section.html %}
+section=page.coffee %} {% include our-space-section.html section=page.our_space
+%}
