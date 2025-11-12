@@ -48,8 +48,39 @@ our_space:
       alt: "Rise & Grind Café Space"
     - src: "/images/cafe-5-opt.png"
       alt: "Rise & Grind Café Interior"
+
+menu:
+  - badge_text: "Signature Selection"
+    title: "Morning Specialties"
+    paragraph_1: "Discover our morning specialties crafted with the finest ingredients to start your day right."
+    items:
+      - menu-item: "Macaron"
+        menu-item-image: /images/menu-food-2.png
+        menu-item-label: "Freshly baked macarons"
+        position: "50% 50%"
+      - menu-item: "Misty Latte"
+        menu-item-image: /images/menu-drink-2.png
+        menu-item-label: "Signature misty latte"
+        position: "50% 50%"
+      - menu-item: "Croissant"
+        menu-item-image: /images/menu-food-1.png
+        menu-item-label: "Buttery croissant"
+        position: "50% 50%"
+      - menu-item: "Cappuccino"
+        menu-item-image: /images/menu-drink-3.png
+        menu-item-label: "Creamy cappuccino"
+        position: "50% 50%"
+      - menu-item: "Sandwich"
+        menu-item-image: /images/menu-food-3.png
+        menu-item-label: "Delicious sandwich"
+        position: "50% 50%"
+    menu-pdf: "/menu.pdf"
+    menu-label: "Download our full menu"
+    menu: "View full menu"
+    cta_title: "Explore Our Complete Experience"
+    cta_description: "From morning rituals to evening delights, discover our full range of artisanal creations"
 ---
 
 {% include hero-section.html section=page.hero %} {% include coffee-section.html
 section=page.coffee %} {% include our-space-section.html section=page.our_space
-%}
+%} {% include menu-section.html %}
