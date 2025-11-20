@@ -1,25 +1,35 @@
-<section class="relative py-20 md:py-32 bg-[#b39978] overflow-hidden">
+<section
+  id="our-space-section"
+  class="our-space-animate relative py-20 md:py-32 bg-[#b39978] overflow-hidden"
+>
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <!-- Text Content -->
     <div class="mb-16 lg:mb-24 max-w-6xl">
-      <div class="mb-8">
+      <div class="mb-8 space-y-4">
         <span
-          class="text-sm md:text-base font-semibold text-amber-100/80 tracking-wider uppercase mb-4 block"
+          class="text-sm md:text-base font-semibold text-amber-100/80 tracking-wider uppercase mb-4 block opacity-0 translate-y-4"
+          id="space-tagline"
         >
           {{ include.section.tagline }}
         </span>
         <h2
-          class="text-5xl md:text-7xl lg:text-8xl font-bold text-amber-50 mb-4 leading-[0.9]"
+          class="text-5xl md:text-7xl lg:text-8xl font-bold text-amber-50 mb-4 leading-[0.9] opacity-0 translate-y-8"
+          id="space-title"
         >
           {{ include.section.title }}
         </h2>
         <h3
-          class="text-3xl md:text-5xl lg:text-6xl font-light text-amber-200 italic"
+          class="text-3xl md:text-5xl lg:text-6xl font-light text-amber-200 italic opacity-0 translate-y-6"
+          id="space-subtitle"
         >
           {{ include.section.subtitle }}
         </h3>
       </div>
 
-      <div class="border-l-4 border-amber-200/30 pl-6 md:pl-8">
+      <div
+        class="border-l-4 border-amber-200/30 pl-6 md:pl-8 opacity-0 -translate-x-8"
+        id="space-description"
+      >
         <p
           class="text-lg md:text-xl lg:text-2xl text-amber-50/95 leading-relaxed md:leading-loose"
         >
@@ -32,7 +42,8 @@
     <div class="grid grid-cols-1 sm:grid-cols-4 sm:grid-rows-2 gap-4 sm:gap-3">
       {% for image in include.section.images %}
       <div
-        class="col-span-1 row-span-1 overflow-hidden relative h-full min-h-40 sm:min-h-[300px] group {% if forloop.first %}col-span-2 row-span-2 min-h-80 sm:min-h-[600px]{% endif %} {% if forloop.index > 1 %}hidden md:block{% endif %}"
+        class="image-item col-span-1 row-span-1 overflow-hidden relative h-full min-h-40 sm:min-h-[300px] group opacity-0 scale-90 {% if forloop.first %}col-span-2 row-span-2 min-h-80 sm:min-h-[600px]{% endif %} {% if forloop.index > 1 %}hidden sm:block{% endif %}"
+        data-delay="{{ forloop.index | times: 0.1 }}"
       >
         <div
           class="absolute inset-0 w-full h-full transform transition-all duration-500 group-hover:scale-[1.02]"
@@ -49,10 +60,203 @@
 
     <!-- Decorative Elements -->
     <div
-      class="absolute top-10 left-10 w-20 h-20 bg-amber-200/10 rounded-full blur-xl"
+      class="absolute top-10 left-10 w-20 h-20 bg-amber-200/10 rounded-full blur-xl opacity-0"
+      id="decorative-1"
     ></div>
     <div
-      class="absolute bottom-10 right-10 w-32 h-32 bg-amber-100/5 rounded-full blur-2xl"
+      class="absolute bottom-10 right-10 w-32 h-32 bg-amber-100/5 rounded-full blur-2xl opacity-0"
+      id="decorative-2"
     ></div>
   </div>
 </section>
+
+<script>
+  // GSAP Animation for Our Space Section
+  document.addEventListener("DOMContentLoaded", function () {
+    // Wait for GSAP to be available
+    if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+      initOurSpaceAnimations();
+    } else {
+      const checkGSAP = setInterval(() => {
+        if (
+          typeof gsap !== "undefined" &&
+          typeof ScrollTrigger !== "undefined"
+        ) {
+          clearInterval(checkGSAP);
+          initOurSpaceAnimations();
+        }
+      }, 100);
+    }
+
+    function initOurSpaceAnimations() {
+      const spaceSection = document.querySelector("#our-space-section");
+
+      if (!spaceSection) return;
+
+      // Register plugins
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Create a timeline for the section
+      const spaceTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: spaceSection,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+          markers: false, // Set to true for debugging
+        },
+      });
+
+      // Text animations
+      spaceTimeline
+        // Tagline animation
+        .to("#space-tagline", {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        })
+        // Title animation
+        .to(
+          "#space-title",
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        )
+        // Subtitle animation
+        .to(
+          "#space-subtitle",
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.5"
+        )
+        // Description animation
+        .to(
+          "#space-description",
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        )
+        // Decorative elements
+        .to(
+          "#decorative-1",
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.7)",
+          },
+          "-=0.5"
+        )
+        .to(
+          "#decorative-2",
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.7)",
+          },
+          "-=0.7"
+        );
+
+      // Image grid animations - staggered entrance
+      const imageItems = document.querySelectorAll(".image-item");
+
+      if (imageItems.length > 0) {
+        gsap.to(imageItems, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "back.out(1.4)",
+          scrollTrigger: {
+            trigger: ".image-item",
+            start: "top 85%",
+            end: "bottom 20%",
+            toggleActions: "play none none reverse",
+          },
+        });
+      }
+
+      // Additional hover effects for images
+      imageItems.forEach((item) => {
+        const img = item.querySelector("img");
+
+        // Enhanced hover effect
+        item.addEventListener("mouseenter", () => {
+          gsap.to(img, {
+            scale: 1.1,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+        });
+
+        item.addEventListener("mouseleave", () => {
+          gsap.to(img, {
+            scale: 1,
+            duration: 0.6,
+            ease: "power2.out",
+          });
+        });
+      });
+
+      // Parallax effect for decorative elements on scroll
+      gsap.to("#decorative-1", {
+        y: -50,
+        rotation: 10,
+        scrollTrigger: {
+          trigger: spaceSection,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      gsap.to("#decorative-2", {
+        y: 30,
+        rotation: -15,
+        scrollTrigger: {
+          trigger: spaceSection,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
+
+      // Optional: Background color shift on scroll
+      gsap.to(spaceSection, {
+        backgroundColor: "#c4ad8c",
+        scrollTrigger: {
+          trigger: spaceSection,
+          start: "top center",
+          end: "bottom center",
+          scrub: 1,
+        },
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Ensure smooth transitions for existing hover effects */
+  .image-item img {
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Prevent flash of unstyled content */
+  .our-space-animate * {
+    transform-style: preserve-3d;
+  }
+</style>
