@@ -1,132 +1,112 @@
 <!-- _includes/footer.html -->
-<footer class="bg-[#5b4432] text-white">
-  <!-- Main Footer Content -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-      <!-- Brand Column -->
-      <div class="space-y-4">
-        <img
-          src="/images/rise-and-grind-logo-optimized.png"
-          alt="Rise & Grind Logo"
-          class="h-8 w-auto sm:h-10 md:h-12 transition-transform duration-300"
-          width="auto"
-          height="auto"
-        />
-        <p class="text-amber-100/80 leading-relaxed text-sm sm:text-base">
-          Crafting exceptional coffee experiences in the heart of Bali. Your
-          perfect brew awaits at Ngurah Rai International Airport.
-        </p>
-        <div class="flex space-x-4 pt-2">
+<footer class="relative overflow-hidden bg-[#3f2e23] text-white">
+  <!-- Ambient glow -->
+  <div
+    class="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent"
+  ></div>
+
+  <!-- Accent line -->
+  <div
+    class="h-1 w-full bg-gradient-to-r from-white/40 via-white/20 to-white/40"
+  ></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-16">
+    <!-- Logo + Motto -->
+    <div class="text-center mb-12 space-y-5">
+      <img
+        src="/images/rise-and-grind-logo-optimized.png"
+        alt="Rise & Grind Logo"
+        class="mx-auto h-14 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300"
+      />
+      <p
+        class="max-w-md mx-auto text-white/80 text-sm sm:text-base leading-relaxed"
+      >
+        Crafting unforgettable coffee experiences in the heart of Bali — where
+        every cup tells a story.
+      </p>
+    </div>
+
+    <div class="w-24 mx-auto h-[2px] bg-white/40 rounded-full mb-14"></div>
+
+    <!-- FLEX LAYOUT -->
+    <div
+      class="footer-section flex flex-wrap justify-center lg:justify-between gap-12"
+    >
+      <!-- Column: Social -->
+      <div class="w-full sm:w-[45%] lg:w-[22%] space-y-5 footer-col">
+        <h4 class="text-lg font-semibold text-white tracking-wide">
+          Stay Connected
+        </h4>
+        <p class="text-sm text-white/70">Follow our journey and daily brews.</p>
+
+        <div class="flex space-x-5">
           {% if site.data.visit.social_media.twitter or
           page.visit.social_media.twitter %}
           <a
             href="{{ page.visit.social_media.twitter | default: site.data.visit.social_media.twitter }}"
-            class="text-amber-200 hover:text-amber-400 transition-colors duration-300"
-            aria-label="Follow us on Twitter"
+            class="text-white hover:text-white/60 transition-colors duration-300"
+            aria-label="Twitter"
           >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
-              />
+            <svg class="w-6 h-6" fill="currentColor">
+              <path d="M24 4.557c..." />
             </svg>
           </a>
           {% endif %} {% if site.data.visit.social_media.instagram or
           page.visit.social_media.instagram %}
           <a
             href="{{ page.visit.social_media.instagram | default: site.data.visit.social_media.instagram }}"
-            class="text-amber-200 hover:text-amber-400 transition-colors duration-300"
-            aria-label="Follow us on Instagram"
+            class="text-white hover:text-white/60 transition-colors duration-300"
+            aria-label="Instagram"
           >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
-              />
+            <svg class="w-6 h-6" fill="currentColor">
+              <path d="M12 2.163c..." />
             </svg>
           </a>
           {% endif %} {% if site.data.visit.social_media.facebook or
           page.visit.social_media.facebook %}
           <a
             href="{{ page.visit.social_media.facebook | default: site.data.visit.social_media.facebook }}"
-            class="text-amber-200 hover:text-amber-400 transition-colors duration-300"
-            aria-label="Follow us on Facebook"
+            class="text-white hover:text-white/60 transition-colors duration-300"
+            aria-label="Facebook"
           >
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"
-              />
+            <svg class="w-6 h-6" fill="currentColor">
+              <path d="M22.675 0h..." />
             </svg>
           </a>
           {% endif %}
         </div>
       </div>
 
-      <!-- Quick Links -->
-      <div>
-        <h4 class="text-lg font-semibold text-amber-300 mb-4">Quick Links</h4>
-        <ul class="space-y-3">
+      <!-- Column: Quick Links -->
+      <div class="w-full sm:w-[45%] lg:w-[22%] footer-col">
+        <h4 class="text-lg font-semibold text-white tracking-wide mb-5">
+          Explore
+        </h4>
+        <ul class="space-y-3 text-sm">
+          {% assign quick_links = "Home:/,Our Menu:/menu,Our Story:/about,Visit
+          Us:/visit,Contact:/contact" | split: "," %} {% for link in quick_links
+          %} {% assign parts = link | split: ":" %}
           <li>
             <a
-              href="/"
-              class="text-amber-100/80 hover:text-amber-400 transition-colors duration-300"
-              >Home</a
+              href="{{ parts[1] }}"
+              class="text-white/80 hover:text-white transition-colors duration-200"
             >
+              {{ parts[0] }}
+            </a>
           </li>
-          <li>
-            <a
-              href="/menu"
-              class="text-amber-100/80 hover:text-amber-400 transition-colors duration-300"
-              >Our Menu</a
-            >
-          </li>
-          <li>
-            <a
-              href="/about"
-              class="text-amber-100/80 hover:text-amber-400 transition-colors duration-300"
-              >Our Story</a
-            >
-          </li>
-          <li>
-            <a
-              href="/visit"
-              class="text-amber-100/80 hover:text-amber-400 transition-colors duration-300"
-              >Visit Us</a
-            >
-          </li>
-          <li>
-            <a
-              href="/contact"
-              class="text-amber-100/80 hover:text-amber-400 transition-colors duration-300"
-              >Contact</a
-            >
-          </li>
+          {% endfor %}
         </ul>
       </div>
 
-      <!-- Contact Info -->
-      <div>
-        <h4 class="text-lg font-semibold text-amber-300 mb-4">Contact Info</h4>
-        <ul class="space-y-3 text-amber-100/80">
-          <li class="flex items-start space-x-3">
-            <svg
-              class="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-            <span class="text-sm">
+      <!-- Column: Contact -->
+      <div class="w-full sm:w-[45%] lg:w-[22%] footer-col">
+        <h4 class="text-lg font-semibold text-white tracking-wide mb-5">
+          Contact
+        </h4>
+        <ul class="space-y-4 text-sm text-white/80">
+          <li>
+            <span class="block font-medium text-white">Address</span>
+            <span class="leading-relaxed block mt-1">
               {{ page.visit.location.name | default:
               site.data.visit.location.name }}<br />
               {{ page.visit.location.address_line_1 | default:
@@ -135,40 +115,18 @@
               site.data.visit.location.address_line_2 }}
             </span>
           </li>
-          <li class="flex items-center space-x-3">
-            <svg
-              class="w-5 h-5 text-amber-400 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-              />
-            </svg>
-            <span class="text-sm"
+
+          <li>
+            <span class="block font-medium text-white">Phone</span>
+            <span
               >{{ page.visit.contact.phone | default:
               site.data.visit.contact.phone }}</span
             >
           </li>
-          <li class="flex items-center space-x-3">
-            <svg
-              class="w-5 h-5 text-amber-400 flex-shrink-0"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
-            </svg>
-            <span class="text-sm"
+
+          <li>
+            <span class="block font-medium text-white">Email</span>
+            <span
               >{{ page.visit.contact.email | default:
               site.data.visit.contact.email }}</span
             >
@@ -176,21 +134,20 @@
         </ul>
       </div>
 
-      <!-- Hours -->
-      <div>
-        <h4 class="text-lg font-semibold text-amber-300 mb-4">Opening Hours</h4>
-        <ul class="space-y-2 text-amber-100/80">
-          <li class="flex justify-between text-sm">
-            <span>Monday - Friday</span>
-            <span>7:00 AM - 9:00 PM</span>
+      <!-- Column: Hours -->
+      <div class="w-full sm:w-[45%] lg:w-[22%] footer-col">
+        <h4 class="text-lg font-semibold text-white tracking-wide mb-5">
+          Hours
+        </h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex justify-between">
+            <span>Mon – Fri</span><span>7:00 – 21:00</span>
           </li>
-          <li class="flex justify-between text-sm">
-            <span>Saturday</span>
-            <span>8:00 AM - 10:00 PM</span>
+          <li class="flex justify-between">
+            <span>Saturday</span><span>8:00 – 22:00</span>
           </li>
-          <li class="flex justify-between text-sm">
-            <span>Sunday</span>
-            <span>8:00 AM - 10:00 PM</span>
+          <li class="flex justify-between">
+            <span>Sunday</span><span>8:00 – 22:00</span>
           </li>
         </ul>
       </div>
@@ -198,48 +155,44 @@
   </div>
 
   <!-- Bottom Bar -->
-  <div class="border-t border-amber-800/30">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-      <div
-        class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left"
-      >
-        <div class="text-amber-200/70 text-sm">
-          &copy; {{ 'now' | date: "%Y" }} Rise & Grind Café. All rights
-          reserved.
-        </div>
-        <div class="text-amber-200/70 text-sm">
-          Designed and built by
-          <span class="text-amber-400 font-semibold"
-            >Refined Island Creations</span
-          >
-        </div>
+  <div class="relative bg-[#35271d] border-t border-white/10 py-6">
+    <div
+      class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-white/70 space-y-3 md:space-y-0"
+    >
+      <div>
+        &copy; {{ 'now' | date: "%Y" }} Rise & Grind Café. All rights reserved.
+      </div>
+      <div>
+        Designed and Built by
+        <span class="text-white font-semibold">Refined Island Creations</span>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- GSAP Animations for Footer -->
+<!-- GSAP Animations -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     if (typeof gsap !== "undefined") {
-      // Animate footer elements on scroll
-      gsap.fromTo(
-        "footer .grid > div",
-        { y: 30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          stagger: 0.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: "footer",
-            start: "top 85%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
+      gsap.from(".footer-col", {
+        y: 40,
+        opacity: 0,
+        duration: 1.1,
+        stagger: 0.25,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: "footer",
+          start: "top 85%",
+        },
+      });
+
+      gsap.to("footer .bg-gradient-to-br", {
+        opacity: 0.6,
+        duration: 6,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
     }
   });
 </script>
