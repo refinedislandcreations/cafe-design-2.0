@@ -1,22 +1,22 @@
 <!-- _includes/story-section.html -->
-<section class="relative min-h-screen overflow-hidden">
+<section class="story-section relative min-h-screen overflow-hidden">
   <!-- Background with 20% top and 80% bottom -->
   <div class="absolute inset-0 z-0">
     <div class="h-1/6 bg-[#eee6d9]"></div>
     <div class="h-5/6 bg-[#b39978]"></div>
   </div>
 
-  <div class="relative z-10 py-16 md:py-24">
+  <div class="relative z-10 py-8 md:py-16 lg:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Image Container -->
       <div
-        class="flex justify-center lg:justify-end mb-8 lg:mb-12 relative overflow-visible"
+        class="flex justify-center lg:justify-end mb-6 md:mb-8 lg:mb-12 relative overflow-visible pt-4"
       >
         <div
-          class="relative aspect-square w-64 md:w-80 lg:w-[26rem] -mt-12 lg:-mt-20 overflow-visible"
+          class="relative aspect-square w-48 xs:w-56 sm:w-64 md:w-72 lg:w-80 xl:w-[26rem] -mt-8 md:-mt-12 lg:-mt-16 xl:-mt-20 overflow-visible"
         >
           <div
-            class="absolute top-0 right-0 w-full h-full bg-[#5b4432] rounded-full z-0 translate-x-[6%] -translate-y-[4%] opacity-80"
+            class="absolute top-0 right-0 w-full h-full bg-[#5b4432] rounded-full z-0 translate-x-[4%] md:translate-x-[6%] -translate-y-[2%] md:-translate-y-[4%] opacity-80"
           ></div>
           <div
             class="relative rounded-full overflow-hidden shadow-2xl w-full h-full z-10 transform hover:scale-105 transition-transform duration-700"
@@ -26,6 +26,7 @@
               alt="{{ include.section.heading_main }}"
               class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
               id="story-image"
+              loading="lazy"
             />
           </div>
         </div>
@@ -33,12 +34,12 @@
 
       <!-- Text Content - Full Width -->
       <div class="w-full max-w-5xl mx-auto">
-        <div class="space-y-8">
+        <div class="space-y-6 md:space-y-8">
           <!-- Heading Section -->
-          <div class="space-y-4 text-center lg:text-left">
+          <div class="space-y-3 md:space-y-4 text-center lg:text-left">
             <div class="overflow-hidden">
               <span
-                class="text-lg md:text-2xl font-light text-amber-200/90 tracking-widest uppercase block transform translate-y-8 opacity-0"
+                class="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-amber-200/90 tracking-widest uppercase block transform translate-y-8 opacity-0"
                 id="heading-top"
               >
                 {{ include.section.heading_top }}
@@ -46,7 +47,7 @@
             </div>
             <div class="overflow-hidden">
               <h2
-                class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight transform translate-y-8 opacity-0"
+                class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight transform translate-y-8 opacity-0"
                 id="heading-main"
               >
                 {{ include.section.heading_main }}
@@ -55,10 +56,10 @@
           </div>
 
           <!-- Paragraphs -->
-          <div class="space-y-6">
+          <div class="space-y-4 md:space-y-6">
             <div class="overflow-hidden">
               <p
-                class="text-xl md:text-2xl leading-relaxed text-amber-100/90 font-light text-center lg:text-left transform translate-y-8 opacity-0"
+                class="text-lg sm:text-xl md:text-2xl leading-relaxed text-amber-100/90 font-light text-center lg:text-left transform translate-y-8 opacity-0"
                 id="paragraph-1"
               >
                 {{ include.section.paragraph_1 }}
@@ -66,7 +67,7 @@
             </div>
             <div class="overflow-hidden">
               <p
-                class="text-xl md:text-2xl leading-relaxed text-amber-100/90 font-light text-center lg:text-left transform translate-y-8 opacity-0"
+                class="text-lg sm:text-xl md:text-2xl leading-relaxed text-amber-100/90 font-light text-center lg:text-left transform translate-y-8 opacity-0"
                 id="paragraph-2"
               >
                 {{ include.section.paragraph_2 }}
@@ -76,20 +77,22 @@
 
           <!-- CTA Section -->
           {% if include.section.cta %}
-          <div class="overflow-hidden pt-6 p-3">
+          <div class="overflow-hidden pt-4 md:pt-6 p-2 md:p-3">
             <div
-              class="w-full max-w-md mx-auto lg:mx-0 transform translate-y-8 opacity-0"
+              class="w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto lg:mx-0 transform translate-y-8 opacity-0"
               id="cta-section"
             >
               <a
                 href="{{ include.section.cta_url | default: '#' }}"
-                class="group inline-flex items-center justify-center w-full px-8 py-5 text-xl font-serif font-semibold text-[#5b4432] bg-amber-400 hover:bg-amber-300 rounded-lg transition-all duration-500 transform hover:scale-105 border-2 border-amber-400 hover:border-amber-300"
+                class="group inline-flex items-center justify-center w-full px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl font-serif font-semibold text-[#5b4432] bg-amber-400 hover:bg-amber-300 rounded-lg transition-all duration-500 transform hover:scale-105 border-2 border-amber-400 hover:border-amber-300"
                 aria-label="{{ include.section.cta_label | default: include.section.cta }}"
               >
-                <span class="flex items-center space-x-4">
+                <span
+                  class="flex items-center space-x-2 sm:space-x-3 md:space-x-4"
+                >
                   <span class="tracking-wide">{{ include.section.cta }}</span>
                   <svg
-                    class="w-6 h-6 transform group-hover:translate-x-2 transition-transform duration-300"
+                    class="w-5 h-5 sm:w-6 sm:h-6 transform group-hover:translate-x-2 transition-transform duration-300"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -113,67 +116,99 @@
 <!-- GSAP Animation Script -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    // Check if GSAP is loaded
-    if (typeof gsap !== "undefined") {
-      const tl = gsap.timeline({
-        defaults: { duration: 1.2, ease: "power3.out" },
-      });
+    // Check if GSAP is loaded, if not, load it dynamically
+    if (typeof gsap === "undefined") {
+      const script = document.createElement("script");
+      script.src =
+        "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js";
+      script.onload = initAnimations;
+      document.head.appendChild(script);
+    } else {
+      initAnimations();
+    }
 
-      // Animate elements in sequence
-      tl.fromTo(
-        "#story-image",
-        { scale: 1.1, rotationY: 10 },
-        { scale: 1, rotationY: 0, duration: 1.5 }
-      )
-        .fromTo(
-          "#heading-top",
-          { y: 30, opacity: 0 },
-          { y: 0, opacity: 1 },
-          "-=0.8"
-        )
-        .fromTo(
-          "#heading-main",
-          { y: 40, opacity: 0 },
-          { y: 0, opacity: 1 },
-          "-=0.6"
-        )
-        .fromTo(
-          "#paragraph-1",
-          { y: 30, opacity: 0 },
-          { y: 0, opacity: 1 },
-          "-=0.4"
-        )
-        .fromTo(
-          "#paragraph-2",
-          { y: 30, opacity: 0 },
-          { y: 0, opacity: 1 },
-          "-=0.2"
-        )
-        .fromTo(
-          "#cta-section",
-          { y: 30, opacity: 0 },
-          { y: 0, opacity: 1 },
-          "-=0.2"
-        );
+    function initAnimations() {
+      // Create Intersection Observer to trigger animations when section comes into view
+      const storySection = document.querySelector(".story-section");
 
-      // Add hover animation to image
-      const storyImage = document.getElementById("story-image");
-      if (storyImage) {
-        storyImage.addEventListener("mouseenter", () => {
-          gsap.to(storyImage, {
-            scale: 1.05,
-            duration: 0.8,
-            ease: "power2.out",
-          });
+      if (storySection) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Start animations when section is in view
+                animateElements();
+                observer.unobserve(storySection); // Only animate once
+              }
+            });
+          },
+          { threshold: 0.2 }
+        ); // Trigger when 20% of the section is visible
+
+        observer.observe(storySection);
+      }
+
+      function animateElements() {
+        const tl = gsap.timeline({
+          defaults: { duration: 1.2, ease: "power3.out" },
         });
 
-        storyImage.addEventListener("mouseleave", () => {
-          gsap.to(storyImage, {
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
+        // Animate elements in sequence
+        tl.fromTo(
+          "#story-image",
+          { scale: 1.1, rotationY: 10, opacity: 0.8 },
+          { scale: 1, rotationY: 0, opacity: 1, duration: 1.5 }
+        )
+          .fromTo(
+            "#heading-top",
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1 },
+            "-=0.8"
+          )
+          .fromTo(
+            "#heading-main",
+            { y: 40, opacity: 0 },
+            { y: 0, opacity: 1 },
+            "-=0.6"
+          )
+          .fromTo(
+            "#paragraph-1",
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1 },
+            "-=0.4"
+          )
+          .fromTo(
+            "#paragraph-2",
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1 },
+            "-=0.2"
+          )
+          .fromTo(
+            "#cta-section",
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1 },
+            "-=0.2"
+          );
+
+        // Add hover animation to image
+        const storyImage = document.getElementById("story-image");
+        if (storyImage) {
+          storyImage.addEventListener("mouseenter", () => {
+            gsap.to(storyImage, {
+              scale: 1.05,
+              duration: 0.8,
+              ease: "power2.out",
+            });
           });
-        });
+
+          storyImage.addEventListener("mouseleave", () => {
+            gsap.to(storyImage, {
+              scale: 1,
+              duration: 0.8,
+              ease: "power2.out",
+            });
+          });
+        }
       }
     }
   });
@@ -181,9 +216,6 @@
 
 <style>
   /* Additional elegant styles */
-  .font-serif {
-    font-family: "Playfair Display", "Times New Roman", serif;
-  }
 
   .text-shadow {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -198,5 +230,17 @@
   ::selection {
     background-color: #b39978;
     color: white;
+  }
+
+  /* Responsive breakpoints for extra small devices */
+  @media (max-width: 475px) {
+    .xs\:text-4xl {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
+
+    .xs\:w-56 {
+      width: 14rem;
+    }
   }
 </style>
