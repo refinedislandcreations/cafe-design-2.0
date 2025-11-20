@@ -79,8 +79,41 @@ menu:
     menu: "View full menu"
     cta_title: "Explore Our Complete Experience"
     cta_description: "From morning rituals to evening delights, discover our full range of artisanal creations"
+
+story:
+  image: "/images/our-story.png"
+  heading_top: "Our Story:"
+  heading_main: "The Daily Rise"
+  paragraph_1: >
+    At Rise & Grind, our journey began with a simple vision: to transform every morning into a delightful experience. Our passion for coffee and community led us to create a space where quality brews and a warm atmosphere come together seamlessly. From sourcing the finest beans to perfecting our brewing techniques, every detail reflects our commitment to excellence and our love for crafting the ideal cup.
+  paragraph_2: >
+    But we’re more than just a café—we’re a community hub where people gather to share stories, enjoy a leisurely breakfast, and savor the little moments. Our space is designed to be inviting and vibrant, offering a retreat from the hustle and bustle of everyday life. Whether you're catching up with friends or enjoying a quiet moment to yourself, Rise & Grind is here to make your mornings brighter and your days more fulfilling.
+  cta: "Get in touch"
+  cta_url: "/contact"
+  cta_label: "Contact Rise & Grind Café"
+  alt: "Rise & Grind Café story and history"
+
+visit:
+  heading_top: "Visit & Follow Us"
+  heading_main: "Come See Us"
+  location:
+    name: "I Gusti Ngurah Rai International Airport"
+    address_line_1: "Denpasar, Bali"
+    address_line_2: "Indonesia"
+  hours:
+    weekdays: "Monday - Friday: 7:00 AM - 9:00 PM"
+    weekends: "Saturday - Sunday: 8:00 AM - 10:00 PM"
+  contact:
+    phone: "(+62) 812-3456-7890"
+    email: "info@riseandgrindcafe.com"
+  social_media:
+    twitter: "https://twitter.com/riseandgrind"
+    instagram: "https://instagram.com/riseandgrind"
+    facebook: "https://facebook.com/riseandgrind"
+  map_embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3943.442533097311!2d115.16395192600339!3d-8.744365189234617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2441650216933%3A0xdf71da6ddd7bcc1f!2sI%20Gusti%20Ngurah%20Rai%20International%20Airport!5e0!3m2!1sen!2sid!4v1763577729390!5m2!1sen!2sid"
 ---
 
 {% include hero-section.html section=page.hero %} {% include coffee-section.html
 section=page.coffee %} {% include our-space-section.html section=page.our_space
-%} {% include menu-section.html %}
+%} {% include menu-section.html %} {% include story-section.html
+section=page.story %} {% include visit-section.html section=page.visit %}
