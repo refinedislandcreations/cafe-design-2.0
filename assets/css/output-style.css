@@ -578,6 +578,9 @@ a {
 .top-5 {
   top: 1.25rem;
 }
+.-bottom-1 {
+  bottom: -0.25rem;
+}
 .-z-10 {
   z-index: -10;
 }
@@ -791,6 +794,9 @@ a {
 .h-\[2px\] {
   height: 2px;
 }
+.h-\[1px\] {
+  height: 1px;
+}
 .min-h-30 {
   min-height: 30vh;
 }
@@ -865,6 +871,9 @@ a {
 }
 .w-56 {
   width: 14rem;
+}
+.w-0 {
+  width: 0px;
 }
 .min-w-\[200px\] {
   min-width: 200px;
@@ -1297,6 +1306,10 @@ a {
 .bg-\[\#3f2e23\] {
   --tw-bg-opacity: 1;
   background-color: rgb(63 46 35 / var(--tw-bg-opacity, 1));
+}
+.bg-\[\#fff\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -2362,6 +2375,10 @@ body {
 .focus\:ring-\[\#d4a574\]:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(212 165 116 / var(--tw-ring-opacity, 1));
+}
+
+.group:hover .group-hover\:w-full {
+  width: 100%;
 }
 
 .group:hover .group-hover\:translate-x-0\.5 {

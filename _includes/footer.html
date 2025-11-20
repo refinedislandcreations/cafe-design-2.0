@@ -83,9 +83,10 @@
           Explore
         </h4>
         <ul class="space-y-3 text-sm">
-          {% assign quick_links = "Home:/,Our Menu:/menu,Our Story:/about,Visit
-          Us:/visit,Contact:/contact" | split: "," %} {% for link in quick_links
-          %} {% assign parts = link | split: ":" %}
+          {% assign quick_links = "First Up:#first-up, Sneak Peek:#our-space,
+          What's Brewing:#menu,Our Story:#our-story,Visit Us:#visit-us" | split:
+          "," %} {% for link in quick_links %} {% assign parts = link | split:
+          ":" %}
           <li>
             <a
               href="{{ parts[1] }}"
@@ -141,7 +142,7 @@
         </h4>
         <ul class="space-y-3 text-sm">
           <li class="flex justify-between">
-            <span>Mon – Fri</span><span>7:00 – 21:00</span>
+            <span>Monday – Friday</span><span>7:00 – 21:00</span>
           </li>
           <li class="flex justify-between">
             <span>Saturday</span><span>8:00 – 22:00</span>
@@ -164,7 +165,21 @@
       </div>
       <div>
         Designed and Built by
-        <span class="text-white font-semibold">Refined Island Creations</span>
+        <span class="text-white font-semibold">
+          <a
+            href="https://refinedislandcreations.com/"
+            class="relative inline-block group"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Refined Island Creations
+
+            <!-- Underline -->
+            <span
+              class="absolute left-0 -bottom-1 h-[1px] w-0 bg-[#fff] transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </span>
       </div>
     </div>
   </div>
