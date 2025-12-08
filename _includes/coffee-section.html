@@ -1,6 +1,6 @@
 <section
   id="coffee-section"
-  class="coffee-parallax relative py-12 md:py-16 lg:py-24 overflow-hidden"
+  class="coffee-parallax relative pt-12 md:pt-16 lg:pt-24 overflow-hidden"
 >
   <div class="max-w-7xl mx-auto px-4 xs:px-6 sm:px-8 lg:px-12 xl:px-16">
     <!-- Image -->
@@ -70,7 +70,7 @@
         class="flex items-start lg:items-end lg:justify-end lg:flex-1 pt-4 sm:pt-6 lg:pt-0"
       >
         <p
-          class="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed sm:leading-loose text-gray-700 font-normal italic border-l-3 border-gray-300 lg:self-end"
+          class="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed sm:leading-loose text-gray-700 font-normal border-l-3 border-gray-300 lg:self-end"
         >
           {{ include.section.paragraph_3 }}
         </p>
@@ -106,9 +106,42 @@
       // Register ScrollTrigger plugin
       gsap.registerPlugin(ScrollTrigger);
 
+      // Function to get yPercent based on screen width
+      function getYPercent() {
+        if (window.innerWidth >= 1024) {
+          return -30; // Desktop: 30%
+        } else if (window.innerWidth >= 768) {
+          return -25; // Tablet: 25%
+        } else {
+          return -10; // Mobile: 10%
+        }
+      }
+
+      // Function to get image yPercent based on screen width
+      function getImageYPercent() {
+        if (window.innerWidth >= 1024) {
+          return -10; // Desktop
+        } else if (window.innerWidth >= 768) {
+          return -8; // Tablet
+        } else {
+          return -6; // Mobile
+        }
+      }
+
+      // Function to get content yPercent based on screen width
+      function getContentYPercent() {
+        if (window.innerWidth >= 1024) {
+          return -5; // Desktop
+        } else if (window.innerWidth >= 768) {
+          return -4; // Tablet
+        } else {
+          return -3; // Mobile
+        }
+      }
+
       // Create parallax animation for the entire section
       gsap.to(coffeeSection, {
-        yPercent: -25,
+        yPercent: getYPercent,
         ease: "none",
         scrollTrigger: {
           trigger: coffeeSection,
@@ -125,7 +158,7 @@
 
       if (parallaxImage) {
         gsap.to(parallaxImage, {
-          yPercent: -10,
+          yPercent: getImageYPercent,
           ease: "none",
           scrollTrigger: {
             trigger: coffeeSection,
@@ -138,7 +171,7 @@
 
       if (parallaxContent) {
         gsap.to(parallaxContent, {
-          yPercent: -5,
+          yPercent: getContentYPercent,
           ease: "none",
           scrollTrigger: {
             trigger: coffeeSection,
@@ -148,6 +181,53 @@
           },
         });
       }
+
+      // Alternative approach using media queries with ScrollTrigger's matchMedia
+      // This is cleaner and more efficient
+      ScrollTrigger.matchMedia({
+        // Desktop (1024px and up)
+        "(min-width: 1024px)": function () {
+          gsap.to(coffeeSection, {
+            yPercent: -25,
+            ease: "none",
+            scrollTrigger: {
+              trigger: coffeeSection,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1,
+              markers: false,
+            },
+          });
+        },
+        // Tablet (768px to 1023px)
+        "(min-width: 768px) and (max-width: 1023px)": function () {
+          gsap.to(coffeeSection, {
+            yPercent: -20,
+            ease: "none",
+            scrollTrigger: {
+              trigger: coffeeSection,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1,
+              markers: false,
+            },
+          });
+        },
+        // Mobile (below 768px)
+        "(max-width: 767px)": function () {
+          gsap.to(coffeeSection, {
+            yPercent: -15,
+            ease: "none",
+            scrollTrigger: {
+              trigger: coffeeSection,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1,
+              markers: false,
+            },
+          });
+        },
+      });
     }
   });
 </script>
