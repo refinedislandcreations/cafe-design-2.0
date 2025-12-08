@@ -33,13 +33,13 @@
       </div>
 
       <!-- Text Content - Full Width -->
-      <div class="w-full max-w-5xl mx-auto">
+      <div class="w-full max-w-5xl mx-auto md:-mt-12 lg:-mt-20 xl:-mt-24">
         <div class="space-y-6 md:space-y-8">
           <!-- Heading Section -->
           <div class="space-y-3 md:space-y-4 text-center lg:text-left">
             <div class="overflow-hidden">
               <span
-                class="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-amber-200/90 tracking-widest uppercase block transform translate-y-8 opacity-0"
+                class="text-sm md:text-base font-semibold text-amber-200/90 tracking-wider uppercase block transform translate-y-8 opacity-0"
                 id="heading-top"
               >
                 {{ include.section.heading_top }}
@@ -47,7 +47,7 @@
             </div>
             <div class="overflow-hidden">
               <h2
-                class="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white leading-tight transform translate-y-8 opacity-0"
+                class="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-[0.9] transform translate-y-8 opacity-0"
                 id="heading-main"
               >
                 {{ include.section.heading_main }}
@@ -59,7 +59,7 @@
           <div class="space-y-4 md:space-y-6">
             <div class="overflow-hidden">
               <p
-                class="text-lg sm:text-xl md:text-2xl leading-relaxed text-amber-100/90 font-light text-center lg:text-left transform translate-y-8 opacity-0"
+                class="text-base md:text-lg lg:text-xl leading-relaxed text-amber-100/90 font-normal text-center lg:text-left transform translate-y-8 opacity-0"
                 id="paragraph-1"
               >
                 {{ include.section.paragraph_1 }}
@@ -67,7 +67,7 @@
             </div>
             <div class="overflow-hidden">
               <p
-                class="text-lg sm:text-xl md:text-2xl leading-relaxed text-amber-100/90 font-light text-center lg:text-left transform translate-y-8 opacity-0"
+                class="text-base md:text-lg lg:text-xl leading-relaxed text-amber-100/90 font-normal text-center lg:text-left transform translate-y-8 opacity-0"
                 id="paragraph-2"
               >
                 {{ include.section.paragraph_2 }}
@@ -84,12 +84,10 @@
             >
               <a
                 href="{{ include.section.cta_url | default: '#' }}"
-                class="group inline-flex items-center justify-center w-full px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-5 text-base sm:text-lg md:text-xl font-serif font-semibold text-[#5b4432] bg-amber-400 hover:bg-amber-300 rounded-lg transition-all duration-500 transform hover:scale-105 border-2 border-amber-400 hover:border-amber-300"
+                class="group inline-flex items-center justify-center w-full sm:w-auto px-6 sm:px-8 md:px-10 py-3 text-base sm:text-base md:text-lg font-semibold text-[#5b4432] bg-amber-400 hover:bg-amber-300 rounded-lg transition-all duration-500 transform hover:scale-105 border-2 border-amber-400 hover:border-amber-300"
                 aria-label="{{ include.section.cta_label | default: include.section.cta }}"
               >
-                <span
-                  class="flex items-center space-x-2 sm:space-x-3 md:space-x-4"
-                >
+                <span class="flex items-center space-x-2 sm:space-x-3">
                   <span class="tracking-wide">{{ include.section.cta }}</span>
                   <svg
                     class="w-5 h-5 sm:w-6 sm:h-6 transform group-hover:translate-x-2 transition-transform duration-300"
