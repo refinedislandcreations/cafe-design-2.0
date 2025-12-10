@@ -1,51 +1,84 @@
 <!------------ Technical Metadata  --------------------------------->
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
 <!------------------Favicon----------------------->
 
-
-
 <!------------ SEO Metadata  --------------------------------->
-<title> {{page.seo.title }} </title> 
-<meta name="description" content="{{page.seo.description }}">
-<meta name="keywords" content="{{page.seo.keywords }}">
+<title>{{page.seo.title }}</title>
+<meta name="description" content="{{page.seo.description }}" />
+<meta name="keywords" content="{{page.seo.keywords }}" />
 
 {% if page.seo.hide-from-google == true %}
-    <meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="noindex, nofollow" />
 {% else %}
-     <meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow" />
 {% endif %}
 
 <!------------  Social media sharing META Tags ------------>
-<meta property="og:title" content="{{ page.title | default: site.data.site-settings.seo.title }}">
-<meta property="og:description" content="{{ page.seo.description | default: site.data.site-settings.seo.description }}"> 
-<meta property="og:image" content="{{ page.seo.social_image | default: site.data.site-settings.seo.social_image }}">
-<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-<meta name="twitter:card" content="{{ page.seo.twitter_card | default: site.data.site-settings.seo.twitter_card }}">
-<meta name="og:site_name" content="{{ site.data.site-settings.seo.site_name }}">
-<link rel="icon" type="image/png" href="{{ site.data.site-settings.seo.favicon_image }}">
+<meta
+  property="og:title"
+  content="{{ page.title | default: site.data.site-settings.seo.title }}"
+/>
+<meta
+  property="og:description"
+  content="{{ page.seo.description | default: site.data.site-settings.seo.description }}"
+/>
+<meta
+  property="og:image"
+  content="{{ page.seo.social_image | default: site.data.site-settings.seo.social_image }}"
+/>
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta
+  name="twitter:card"
+  content="{{ page.seo.twitter_card | default: site.data.site-settings.seo.twitter_card }}"
+/>
+<meta
+  name="og:site_name"
+  content="{{ site.data.site-settings.seo.site_name }}"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  href="{{ site.data.site-settings.seo.favicon_image }}"
+/>
 
 <!-- This is our fontawesome icons  -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
- 
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
 <!------------ Google Fonts  ------------>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+  rel="stylesheet"
+/>
 
 <!-------------Lightgallery--------------------->
-<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/css/lightgallery-bundle.min.css" integrity="sha512-7xAjdVc23n18sYEAZKa79271IRUS1XzylIyJ8feyXvjrbbr4oId92993EiGTAP63Ob6KplRnmbNmBOg6bpLjYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.1.8/css/lightgallery-bundle.min.css"
+  integrity="sha512-7xAjdVc23n18sYEAZKa79271IRUS1XzylIyJ8feyXvjrbbr4oId92993EiGTAP63Ob6KplRnmbNmBOg6bpLjYw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
 
 <!------------AOS------------------->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
 <!------------ Tailwind Stylesheet  ------------>
-<link rel="stylesheet" type="text/css" href="/assets/css/output-style.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/output-style.css" />
 
 <!------------ CloudCannon Editor Stylesheet   ------------>
 <link rel="stylesheet" type="text/css" href="/editor.css" />
@@ -53,3 +86,22 @@
 <!------------ Custom Stylesheet   ------------>
 <link rel="stylesheet" type="text/css" href="/style.css" />
 
+<!------------ Favicon Links  --------------------------------->
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="favicon/apple-touch-icon.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="favicon/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="favicon/favicon-16x16.png"
+/>
+<link rel="manifest" href="favicon/site.webmanifest" />
