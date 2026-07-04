@@ -105,3 +105,81 @@
   href="favicon/favicon-16x16.png"
 />
 <link rel="manifest" href="favicon/site.webmanifest" />
+
+<!-- Preload critical assets -->
+{% if page.hero.background_image %}
+<link rel="preload" as="image" href="{{ page.hero.background_image }}" />
+{% endif %}
+
+<!-- GEO: Organisation Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Refined Island Creations",
+  "url": "https://refinedislandcreations.com",
+  "logo": "https://refinedislandcreations.com/logo.png"
+}
+</script>
+
+<!-- GEO: CreativeWork Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Rise and Grind Cafe - Custom-Coded Website by Refined Island Creations",
+  "description": "A concept website for a premium cafe brand. Designed and built by Refined Island Creations as a portfolio demonstration of bold, energetic custom-coded cafe and restaurant website design with digital menu and online ordering integration.",
+  "url": "https://rise-and-grind-cafe.refinedislandcreations.com",
+  "creator": {
+    "@type": "Organization",
+    "name": "Refined Island Creations",
+    "url": "https://refinedislandcreations.com"
+  },
+  "isPartOf": {
+    "@type": "CollectionPage",
+    "name": "Portfolio - Refined Island Creations",
+    "url": "https://refinedislandcreations.com/portfolio.html"
+  },
+  "about": {
+    "@type": "CafeOrCoffeeShop",
+    "name": "Rise and Grind Cafe",
+    "address": { "@type": "PostalAddress", "addressLocality": "Bali", "addressCountry": "ID" }
+  }
+}
+</script>
+
+<!-- GEO: LocalBusiness Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Rise & Grind Cafe",
+  "url": "https://rise-and-grind-cafe.refinedislandcreations.com",
+  "description": "Rise & Grind Cafe serves exceptional specialty coffee, bold flavours, and a community-driven atmosphere in the heart of Bali.",
+  "image": "https://rise-and-grind-cafe.refinedislandcreations.com/images/rise-and-grind-logo-optimized.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Cappuccino Curve No. 12",
+    "addressLocality": "Denpasar",
+    "addressRegion": "Bali",
+    "addressCountry": "ID"
+  },
+  "telephone": "+6282339577507",
+  "email": "info@refinedislandcreations.com"
+}
+</script>
+
+<!-- GEO: WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Rise & Grind Cafe",
+  "url": "https://rise-and-grind-cafe.refinedislandcreations.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://rise-and-grind-cafe.refinedislandcreations.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
